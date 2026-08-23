@@ -1,0 +1,33 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+============================================================
+
+All data files under this directory (data/**), including both the raw/ and
+normalized/ snapshots, are licensed under the Creative Commons Attribution
+4.0 International License.
+
+Full legal text: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+You are free to:
+  - Share   — copy and redistribute the data in any medium or format
+  - Adapt   — remix, transform, and build upon the data
+  for any purpose, even commercially.
+
+Under the following terms:
+  - Attribution — You must give appropriate credit to:
+      1. the original data source (the utility/organization named in each
+         file's "source" field, e.g. EKZ), and
+      2. this repository, Strompreise-Schweiz/ekz
+         (https://github.com/Strompreise-Schweiz/ekz),
+    provide a link to this license, and indicate if changes were made.
+    You may do so in any reasonable manner, but not in any way that suggests
+    the licensor endorses you or your use.
+  - No additional restrictions — you may not apply legal terms or
+    technological measures that legally restrict others from doing anything
+    the license permits.
+
+No warranties are given. The data is scraped automatically from each
+organization's public tariff API and is provided "as is", without any
+guarantee of accuracy, completeness, or fitness for a particular purpose.
+The organizations named as data sources are not affiliated with, and do not
+endorse, this repository.

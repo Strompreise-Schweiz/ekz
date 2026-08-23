@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "ekz",
+    "name": "EKZ (Elektrizitätswerke des Kantons Zürich)",
+    "country": "CH",
+    "api_url": "https://api.tariffs.ekz.ch/v1/tariffs",
+    "website": "https://www.ekz.ch",
+    "normalizer": "ekz"
+  }
+]

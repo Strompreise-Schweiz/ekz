@@ -1,0 +1,42 @@
+name: Fetch tariffs
+
+on:
+  schedule:
+    # 17:30 UTC = 18:30 CET / 19:30 CEST, i.e. always after 18:00 Europe/Zurich time.
+    # Off the top of the hour on purpose, since that's when GitHub's scheduler is busiest.
+    - cron: "30 17 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-tariffs
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch and normalize tariffs
+        run: python3 scripts/fetch_and_normalize.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "data: tariff snapshot $(date -u +%Y-%m-%d)"
+            git push
+          fi
