@@ -1,0 +1,14 @@
+name: Validate
+
+on:
+  push:
+    paths-ignore:
+      - "data/dynamic/**"
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    uses: Strompreise-Schweiz/tariff-core/.github/workflows/reusable-validate.yml@main

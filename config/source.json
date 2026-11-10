@@ -1,8 +1,110 @@
 {
+  "$schema": "https://raw.githubusercontent.com/Strompreise-Schweiz/tariff-core/main/schemas/source-config/v1.schema.json",
   "slug": "ekz",
   "name": "EKZ (Elektrizitätswerke des Kantons Zürich)",
   "country": "CH",
-  "api_url": "https://api.tariffs.ekz.ch/v1/tariffs",
   "website": "https://www.ekz.ch",
-  "normalizer": "generic_vse"
+  "vse_id": "CH10153012345",
+  "data_license": "CC-BY-4.0",
+  "dynamic": [
+    {
+      "id": "electricity-dynamic",
+      "name": "EKZ Energie Dynamisch",
+      "api_url": "https://api.tariffs.ekz.ch/v1/tariffs",
+      "query": {
+        "tariff_name": "electricity_dynamic"
+      },
+      "components": [
+        "electricity"
+      ],
+      "note": "tariff_name from prices.dynamic.url in the EKZ file. Applies to all clusters."
+    },
+    {
+      "id": "grid-400d",
+      "name": "EKZ Netz 400D including fees (2026)",
+      "api_url": "https://api.tariffs.ekz.ch/v1/tariffs",
+      "query": {
+        "tariff_name": "grid_400D_inclFees"
+      },
+      "components": [
+        "grid"
+      ],
+      "valid_to": "2026-12-31",
+      "note": "tariff_name from prices.dynamic.url in the EKZ file."
+    },
+    {
+      "id": "integrated-400d",
+      "name": "EKZ 400D integrated (2026)",
+      "api_url": "https://api.tariffs.ekz.ch/v1/tariffs",
+      "query": {
+        "tariff_name": "integrated_400D"
+      },
+      "components": [
+        "integrated"
+      ],
+      "valid_to": "2026-12-31",
+      "note": "tariff_name from the evcc template, not from an EKZ document. Check it against the API documentation. The name of an integrated tariff per cluster is unknown."
+    },
+    {
+      "id": "grid-400d-cluster-1",
+      "name": "EKZ Netz 400D Cluster 1 including fees",
+      "api_url": "https://api.tariffs.ekz.ch/v1/tariffs",
+      "query": {
+        "tariff_name": "grid_400D1_inclFees"
+      },
+      "components": [
+        "grid"
+      ],
+      "valid_from": "2027-01-01",
+      "note": "EKZ assigns each customer to a cluster by transformer station, for one tariff year. The customer sees it in myEKZ. EKZ publishes no list."
+    },
+    {
+      "id": "grid-400d-cluster-2",
+      "name": "EKZ Netz 400D Cluster 2 including fees",
+      "api_url": "https://api.tariffs.ekz.ch/v1/tariffs",
+      "query": {
+        "tariff_name": "grid_400D2_inclFees"
+      },
+      "components": [
+        "grid"
+      ],
+      "valid_from": "2027-01-01",
+      "note": "EKZ assigns each customer to a cluster by transformer station, for one tariff year. The customer sees it in myEKZ. EKZ publishes no list."
+    },
+    {
+      "id": "grid-400d-cluster-3",
+      "name": "EKZ Netz 400D Cluster 3 including fees",
+      "api_url": "https://api.tariffs.ekz.ch/v1/tariffs",
+      "query": {
+        "tariff_name": "grid_400D3_inclFees"
+      },
+      "components": [
+        "grid"
+      ],
+      "valid_from": "2027-01-01",
+      "note": "EKZ assigns each customer to a cluster by transformer station, for one tariff year. The customer sees it in myEKZ. EKZ publishes no list."
+    },
+    {
+      "id": "grid-400d-cluster-4",
+      "name": "EKZ Netz 400D Cluster 4 including fees",
+      "api_url": "https://api.tariffs.ekz.ch/v1/tariffs",
+      "query": {
+        "tariff_name": "grid_400D4_inclFees"
+      },
+      "components": [
+        "grid"
+      ],
+      "valid_from": "2027-01-01",
+      "note": "EKZ assigns each customer to a cluster by transformer station, for one tariff year. The customer sees it in myEKZ. EKZ publishes no list."
+    }
+  ],
+  "static": {
+    "sources": [
+      {
+        "name": "ekz-all",
+        "url": "https://www.ekz.ch/dam/ekz/privatkunden/strom/tarife-und-agb/tarife_ekz.json",
+        "note": "Holds several years in one file."
+      }
+    ]
+  }
 }

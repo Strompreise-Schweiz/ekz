@@ -1,0 +1,26 @@
+name: Fetch dynamic tariffs
+
+on:
+  schedule:
+    # GitHub does not guarantee these times, so one run is not enough. Later runs
+    # are fallbacks: they change nothing if the data is already there. Most utilities
+    # publish by 18:00 on the day before. Off the full hour, when GitHub is busiest.
+    - cron: "35 18 * * *"
+      timezone: "Europe/Zurich"
+    - cron: "5 20 * * *"
+      timezone: "Europe/Zurich"
+    - cron: "5 22 * * *"
+      timezone: "Europe/Zurich"
+  # Also the entry point for an external scheduler, see tariff-core/docs/scheduling.md.
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-dynamic
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    uses: Strompreise-Schweiz/tariff-core/.github/workflows/reusable-fetch.yml@main

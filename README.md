@@ -1,56 +1,67 @@
-# EKZ tariff archive
+# EKZ (Elektrizitätswerke des Kantons Zürich)
 
-A daily archive of EKZ's dynamic electricity tariff data, turned into a
-static, file-based "REST API" you can query directly via
-`raw.githubusercontent.com` — no server, no auth, no rate limits beyond
-GitHub's own.
+Tariff data of EKZ (Elektrizitätswerke des Kantons Zürich), published by the
+[Strompreise Schweiz](https://github.com/Strompreise-Schweiz) initiative. All logic lives in
+[`tariff-core`](https://github.com/Strompreise-Schweiz/tariff-core); this repo holds configuration,
+corrections and data.
 
-Part of the [Strompreise Schweiz](https://github.com/Strompreise-Schweiz)
-initiative. The actual fetch/normalize logic lives centrally in
-[`tariff-etl`](https://github.com/Strompreise-Schweiz/tariff-etl) — this repo
-just holds [`config/source.json`](config/source.json) plus the archived
-data. See tariff-etl's [`SCHEMA.md`](https://github.com/Strompreise-Schweiz/tariff-etl/blob/main/SCHEMA.md)
-for the exact file layout and JSON schema.
+Everything is listed in `https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/index.json`.
 
-A [GitHub Actions workflow](.github/workflows/fetch-tariffs.yml) runs once a
-day (17:30 UTC, i.e. always after 18:00 in Europe/Zurich) and commits a
-fresh snapshot.
+## Dynamic tariffs
 
-## Usage
+These URLs never change. Each file holds today and, once published, tomorrow.
 
-```
-data/dynamic/raw/<year>/<date>.json          # untouched EKZ API response
-data/dynamic/vse/<year>/<date>.json          # same data, Swiss local time
-data/dynamic/normalized/<year>/<date>.json   # common cross-org schema
-```
+| Tariff | Valid | Stable URL |
+|---|---|---|
+| EKZ Energie Dynamisch | now to open | `https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/electricity-dynamic/latest.json` |
+| EKZ Netz 400D including fees (2026) | now to 2026-12-31 | `https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/grid-400d/latest.json` |
+| EKZ 400D integrated (2026) | now to 2026-12-31 | `https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/integrated-400d/latest.json` |
+| EKZ Netz 400D Cluster 1 including fees | 2027-01-01 to open | `https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/grid-400d-cluster-1/latest.json` |
+| EKZ Netz 400D Cluster 2 including fees | 2027-01-01 to open | `https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/grid-400d-cluster-2/latest.json` |
+| EKZ Netz 400D Cluster 3 including fees | 2027-01-01 to open | `https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/grid-400d-cluster-3/latest.json` |
+| EKZ Netz 400D Cluster 4 including fees | 2027-01-01 to open | `https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/grid-400d-cluster-4/latest.json` |
 
-For example, today's normalized tariffs:
+The format is the VSE format (HDN 2025, chapter 7.4) with an additional `_meta` block.
+Timestamps are Swiss local time with an offset, for example `2026-11-02T00:00:00+01:00`.
+Parse the offset and do not assume 96 intervals: a day has 92 in March and 100 in October.
+Check `_meta.days[].complete` and `_meta.valid_to` before you use the data.
 
-```
-https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/normalized/2026/2026-08-25.json
-```
+Archive per day: `data/dynamic/<id>/{raw,vse,normalized}/<year>/<date>.json`.
 
-Swap the date to fetch any other day.
+### Grid clusters from 2027
+
+From 2027 the grid tariff 400D has four variants. A cluster is a group of transformer stations with a
+similar load pattern, not a region. EKZ assigns each customer for one tariff year and shows the
+assignment in myEKZ. EKZ publishes no list, so it cannot be derived from an address or municipality.
+Use the URL of your cluster together with `electricity-dynamic`.
+
+## Static tariffs (constant, multilevel)
+
+| What | Stable URL |
+|---|---|
+| Current year | `https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/tariffs/current.json` |
+| A given year | `https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/tariffs/<year>.json` |
+
+The format is the VSE format (NNMV annex 10, OpenAPI) with additional fields: `tariffs[].id`,
+`products` (which tariffs belong together) and `_meta` (source, repairs and corrections).
+Prices exclude VAT.
+
+## Older data
+
+`data/dynamic/legacy-default/` holds the archive up to November 2026. It was fetched without
+`tariff_name`, so it contains the standard tariff with one price per day and not the dynamic 400D
+tariff. Do not use it as dynamic data.
+
+## Structure
+
+| Path | Content | Who changes it |
+|---|---|---|
+| `config/source.json` | Data sources | Person |
+| `curation/<year>.json` | Corrections and product mapping, each with a reason | Person |
+| `data/**` | Generated data | GitHub Actions only |
+
+Format details: [`SCHEMA.md`](https://github.com/Strompreise-Schweiz/tariff-core/blob/main/SCHEMA.md).
 
 ## License
 
-This repository is dual-licensed:
-
-- **Code** (everything outside `data/`) — [MIT](LICENSE).
-- **Data** (`data/**`) — [Creative Commons Attribution 4.0](data/LICENSE)
-  (CC BY 4.0). You're free to use, share, and build on the data, including
-  commercially, as long as you credit both EKZ (the original data source)
-  and this repository. Each normalized JSON file carries its own
-  `source.attribution` string for exactly this reason.
-
-This project archives and redistributes EKZ's public API output with
-attribution. It is not affiliated with, and not endorsed by, EKZ.
-
-## Running it yourself
-
-```bash
-python3 /path/to/tariff-etl/engine/fetch_and_normalize.py
-```
-
-Run from within this repo's root (needs `config/source.json`, which is
-already here). Stdlib-only, no dependencies to install.
+See [`data/LICENSE`](data/LICENSE) for the data and [`LICENSE`](LICENSE) for the code.
