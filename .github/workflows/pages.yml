@@ -1,0 +1,27 @@
+name: Deploy site
+
+# Project site under the own domain of the hub repo, at /<repo>/. Commits by GitHub
+# Actions do not start push workflows, so the site is also rebuilt after each data run.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+  workflow_run:
+    workflows: ["Fetch dynamic tariffs", "Publish static tariffs"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    uses: Strompreise-Schweiz/tariff-core/.github/workflows/reusable-pages.yml@main
