@@ -1,0 +1,16 @@
+{
+  "$comment": "Stable entry point for this organization. All URLs below stay valid.",
+  "organization": "EKZ (Elektrizitätswerke des Kantons Zürich)",
+  "slug": "ekz",
+  "vse_id": "CH10153012345",
+  "website": "https://www.ekz.ch",
+  "license": "CC-BY-4.0",
+  "static": {
+    "current": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/tariffs/current.json",
+    "years": {
+      "2026": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/tariffs/2026.json",
+      "2027": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/tariffs/2027.json"
+    }
+  },
+  "dynamic": []
+}
