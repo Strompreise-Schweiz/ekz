@@ -1,0 +1,987 @@
+{
+  "schema_version": "1.1",
+  "source": {
+    "organization": "EKZ (Elektrizitätswerke des Kantons Zürich)",
+    "organization_slug": "ekz",
+    "tariff_id": "electricity-dynamic",
+    "country": "CH",
+    "api_url": "https://api.tariffs.ekz.ch/v1/tariffs",
+    "website": "https://www.ekz.ch",
+    "publication_timestamp": "2026-11-09T17:50:31+01:00",
+    "attribution": "Data sourced from EKZ (Elektrizitätswerke des Kantons Zürich) (https://www.ekz.ch), archived by Strompreise-Schweiz (https://github.com/Strompreise-Schweiz/ekz)."
+  },
+  "retrieved_at": "2026-11-11T01:12:40+00:00",
+  "date": "2026-11-09",
+  "complete": true,
+  "tariff_type": "consumption",
+  "timezone": "UTC",
+  "currency": "CHF",
+  "resolution_minutes": 15,
+  "fixed_charges": {
+    "electricity": {
+      "chf_per_month": 3.0
+    }
+  },
+  "intervals": [
+    {
+      "start": "2026-11-08T23:00:00+00:00",
+      "end": "2026-11-08T23:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10837
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-08T23:15:00+00:00",
+      "end": "2026-11-08T23:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.1081
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-08T23:30:00+00:00",
+      "end": "2026-11-08T23:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10783
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-08T23:45:00+00:00",
+      "end": "2026-11-09T00:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10756
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T00:00:00+00:00",
+      "end": "2026-11-09T00:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10729
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T00:15:00+00:00",
+      "end": "2026-11-09T00:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10692
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T00:30:00+00:00",
+      "end": "2026-11-09T00:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10654
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T00:45:00+00:00",
+      "end": "2026-11-09T01:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10617
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T01:00:00+00:00",
+      "end": "2026-11-09T01:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.1058
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T01:15:00+00:00",
+      "end": "2026-11-09T01:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10579
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T01:30:00+00:00",
+      "end": "2026-11-09T01:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10579
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T01:45:00+00:00",
+      "end": "2026-11-09T02:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10579
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T02:00:00+00:00",
+      "end": "2026-11-09T02:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10579
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T02:15:00+00:00",
+      "end": "2026-11-09T02:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10602
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T02:30:00+00:00",
+      "end": "2026-11-09T02:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10626
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T02:45:00+00:00",
+      "end": "2026-11-09T03:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.1065
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T03:00:00+00:00",
+      "end": "2026-11-09T03:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10674
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T03:15:00+00:00",
+      "end": "2026-11-09T03:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10808
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T03:30:00+00:00",
+      "end": "2026-11-09T03:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.10943
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T03:45:00+00:00",
+      "end": "2026-11-09T04:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.11078
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T04:00:00+00:00",
+      "end": "2026-11-09T04:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.11213
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T04:15:00+00:00",
+      "end": "2026-11-09T04:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.11643
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T04:30:00+00:00",
+      "end": "2026-11-09T04:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12072
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T04:45:00+00:00",
+      "end": "2026-11-09T05:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12502
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T05:00:00+00:00",
+      "end": "2026-11-09T05:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12932
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T05:15:00+00:00",
+      "end": "2026-11-09T05:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13044
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T05:30:00+00:00",
+      "end": "2026-11-09T05:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13157
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T05:45:00+00:00",
+      "end": "2026-11-09T06:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.1327
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T06:00:00+00:00",
+      "end": "2026-11-09T06:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13382
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T06:15:00+00:00",
+      "end": "2026-11-09T06:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13515
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T06:30:00+00:00",
+      "end": "2026-11-09T06:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13648
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T06:45:00+00:00",
+      "end": "2026-11-09T07:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13781
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T07:00:00+00:00",
+      "end": "2026-11-09T07:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13914
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T07:15:00+00:00",
+      "end": "2026-11-09T07:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13913
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T07:30:00+00:00",
+      "end": "2026-11-09T07:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13912
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T07:45:00+00:00",
+      "end": "2026-11-09T08:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13911
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T08:00:00+00:00",
+      "end": "2026-11-09T08:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.1391
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T08:15:00+00:00",
+      "end": "2026-11-09T08:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13689
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T08:30:00+00:00",
+      "end": "2026-11-09T08:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13469
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T08:45:00+00:00",
+      "end": "2026-11-09T09:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13249
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T09:00:00+00:00",
+      "end": "2026-11-09T09:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13028
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T09:15:00+00:00",
+      "end": "2026-11-09T09:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12984
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T09:30:00+00:00",
+      "end": "2026-11-09T09:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.1294
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T09:45:00+00:00",
+      "end": "2026-11-09T10:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12896
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T10:00:00+00:00",
+      "end": "2026-11-09T10:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12852
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T10:15:00+00:00",
+      "end": "2026-11-09T10:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12812
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T10:30:00+00:00",
+      "end": "2026-11-09T10:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12773
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T10:45:00+00:00",
+      "end": "2026-11-09T11:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12733
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T11:00:00+00:00",
+      "end": "2026-11-09T11:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12694
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T11:15:00+00:00",
+      "end": "2026-11-09T11:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12707
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T11:30:00+00:00",
+      "end": "2026-11-09T11:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.1272
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T11:45:00+00:00",
+      "end": "2026-11-09T12:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12733
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T12:00:00+00:00",
+      "end": "2026-11-09T12:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12746
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T12:15:00+00:00",
+      "end": "2026-11-09T12:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12905
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T12:30:00+00:00",
+      "end": "2026-11-09T12:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13064
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T12:45:00+00:00",
+      "end": "2026-11-09T13:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13223
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T13:00:00+00:00",
+      "end": "2026-11-09T13:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13381
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T13:15:00+00:00",
+      "end": "2026-11-09T13:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.14207
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T13:30:00+00:00",
+      "end": "2026-11-09T13:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.15033
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T13:45:00+00:00",
+      "end": "2026-11-09T14:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.15859
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T14:00:00+00:00",
+      "end": "2026-11-09T14:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.16685
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T14:15:00+00:00",
+      "end": "2026-11-09T14:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.17089
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T14:30:00+00:00",
+      "end": "2026-11-09T14:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.17493
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T14:45:00+00:00",
+      "end": "2026-11-09T15:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.17896
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T15:00:00+00:00",
+      "end": "2026-11-09T15:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.183
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T15:15:00+00:00",
+      "end": "2026-11-09T15:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.17969
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T15:30:00+00:00",
+      "end": "2026-11-09T15:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.17638
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T15:45:00+00:00",
+      "end": "2026-11-09T16:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.17307
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T16:00:00+00:00",
+      "end": "2026-11-09T16:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.16976
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T16:15:00+00:00",
+      "end": "2026-11-09T16:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.16928
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T16:30:00+00:00",
+      "end": "2026-11-09T16:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.16881
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T16:45:00+00:00",
+      "end": "2026-11-09T17:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.16833
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T17:00:00+00:00",
+      "end": "2026-11-09T17:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.16785
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T17:15:00+00:00",
+      "end": "2026-11-09T17:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.1626
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T17:30:00+00:00",
+      "end": "2026-11-09T17:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.15735
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T17:45:00+00:00",
+      "end": "2026-11-09T18:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.1521
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T18:00:00+00:00",
+      "end": "2026-11-09T18:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.14684
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T18:15:00+00:00",
+      "end": "2026-11-09T18:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.14484
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T18:30:00+00:00",
+      "end": "2026-11-09T18:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.14284
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T18:45:00+00:00",
+      "end": "2026-11-09T19:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.14083
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T19:00:00+00:00",
+      "end": "2026-11-09T19:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13883
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T19:15:00+00:00",
+      "end": "2026-11-09T19:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13709
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T19:30:00+00:00",
+      "end": "2026-11-09T19:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13534
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T19:45:00+00:00",
+      "end": "2026-11-09T20:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.1336
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T20:00:00+00:00",
+      "end": "2026-11-09T20:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13186
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T20:15:00+00:00",
+      "end": "2026-11-09T20:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.13006
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T20:30:00+00:00",
+      "end": "2026-11-09T20:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12825
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T20:45:00+00:00",
+      "end": "2026-11-09T21:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12645
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T21:00:00+00:00",
+      "end": "2026-11-09T21:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12465
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T21:15:00+00:00",
+      "end": "2026-11-09T21:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12343
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T21:30:00+00:00",
+      "end": "2026-11-09T21:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12221
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T21:45:00+00:00",
+      "end": "2026-11-09T22:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.12099
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T22:00:00+00:00",
+      "end": "2026-11-09T22:15:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.11977
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T22:15:00+00:00",
+      "end": "2026-11-09T22:30:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.11977
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T22:30:00+00:00",
+      "end": "2026-11-09T22:45:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.11977
+        }
+      },
+      "total_chf_per_kwh": null
+    },
+    {
+      "start": "2026-11-09T22:45:00+00:00",
+      "end": "2026-11-09T23:00:00+00:00",
+      "components": {
+        "electricity": {
+          "chf_per_kwh": 0.11977
+        }
+      },
+      "total_chf_per_kwh": null
+    }
+  ]
+}

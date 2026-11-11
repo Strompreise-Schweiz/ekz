@@ -1,10 +1,12 @@
 {
-  "$comment": "Stable entry point for this organization. All URLs below stay valid.",
+  "$comment": "Stable entry point for this organization. All URLs below stay valid. Every path under data/ is also served under site.",
   "organization": "EKZ (Elektrizitätswerke des Kantons Zürich)",
   "slug": "ekz",
   "vse_id": "CH10153012345",
   "website": "https://www.ekz.ch",
   "license": "CC-BY-4.0",
+  "repository": "https://github.com/Strompreise-Schweiz/ekz",
+  "site": "https://data.strompreise-schweiz.ch/ekz/",
   "static": {
     "current": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/tariffs/current.json",
     "years": {
@@ -12,5 +14,42 @@
       "2027": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/tariffs/2027.json"
     }
   },
-  "dynamic": []
+  "dynamic": [
+    {
+      "id": "electricity-dynamic",
+      "name": "EKZ Energie Dynamisch",
+      "components": [
+        "electricity"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "latest": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/electricity-dynamic/latest.json",
+      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/electricity-dynamic/vse/{year}/{date}.json",
+      "source": "https://api.tariffs.ekz.ch/v1/tariffs"
+    },
+    {
+      "id": "grid-400d",
+      "name": "EKZ Netz 400D including fees (2026)",
+      "components": [
+        "grid"
+      ],
+      "valid_from": null,
+      "valid_to": "2026-12-31",
+      "latest": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/grid-400d/latest.json",
+      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/grid-400d/vse/{year}/{date}.json",
+      "source": "https://api.tariffs.ekz.ch/v1/tariffs"
+    },
+    {
+      "id": "integrated-400d",
+      "name": "EKZ 400D integrated (2026)",
+      "components": [
+        "integrated"
+      ],
+      "valid_from": null,
+      "valid_to": "2026-12-31",
+      "latest": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/integrated-400d/latest.json",
+      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/integrated-400d/vse/{year}/{date}.json",
+      "source": "https://api.tariffs.ekz.ch/v1/tariffs"
+    }
+  ]
 }
