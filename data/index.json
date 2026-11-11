@@ -14,6 +14,8 @@
       "2027": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/tariffs/2027.json"
     }
   },
+  "vse_conformance": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/vse-conformance.json",
+  "status": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/status.json",
   "dynamic": [
     {
       "id": "electricity-dynamic",

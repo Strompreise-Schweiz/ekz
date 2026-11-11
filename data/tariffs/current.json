@@ -5,7 +5,7 @@
   "_meta": {
     "schemaVersion": "1.0",
     "year": 2026,
-    "generatedAt": "2026-11-10T20:43:03+00:00",
+    "generatedAt": "2026-11-11T21:41:37+00:00",
     "source": [
       {
         "name": "ekz-all",
@@ -16,11 +16,6 @@
     "pricesExcludeVat": true,
     "repairs": [
       {
-        "code": "weekday_spelling",
-        "detail": "converted weekday Su to So, the OpenAPI enum value",
-        "count": 23
-      },
-      {
         "code": "end_of_day_to_midnight",
         "detail": "converted 23:59 to 00:00: the VSE FAQ ends a day at 00:00",
         "count": 23
@@ -28,30 +23,6 @@
     ],
     "overrides": [],
     "issues": [
-      {
-        "severity": "warning",
-        "code": "missing_voltage_level",
-        "tariff": "electricity-ekz-energie-erneuerbar",
-        "message": "the source states no voltage level"
-      },
-      {
-        "severity": "warning",
-        "code": "missing_voltage_level",
-        "tariff": "electricity-ekz-energie-dynamisch",
-        "message": "the source states no voltage level"
-      },
-      {
-        "severity": "warning",
-        "code": "missing_voltage_level",
-        "tariff": "electricity-ekz-energie-beleuchtung",
-        "message": "the source states no voltage level"
-      },
-      {
-        "severity": "warning",
-        "code": "missing_voltage_level",
-        "tariff": "electricity-ekz-energie-business-erneuerbar",
-        "message": "the source states no voltage level"
-      },
       {
         "severity": "warning",
         "code": "multilevel_with_single_price",
@@ -78,51 +49,8 @@
       },
       {
         "severity": "warning",
-        "code": "missing_voltage_level",
-        "tariff": "metering-messung-direkt-netzebene-7",
-        "message": "the source states no voltage level"
-      },
-      {
-        "severity": "warning",
-        "code": "missing_voltage_level",
-        "tariff": "metering-messung-indirekt-netzebene-7",
-        "message": "the source states no voltage level"
-      },
-      {
-        "severity": "warning",
-        "code": "missing_voltage_level",
-        "tariff": "metering-messung-indirekt-netzebene-5",
-        "message": "the source states no voltage level"
-      },
-      {
-        "severity": "warning",
-        "code": "missing_voltage_level",
-        "tariff": "metering-virtueller-messpunkt",
-        "message": "the source states no voltage level"
-      },
-      {
-        "severity": "warning",
-        "code": "missing_voltage_level",
-        "tariff": "regional-fees-gemeinde-und-kantonalabgaben-9a2874",
-        "message": "the source states no voltage level"
-      },
-      {
-        "severity": "warning",
-        "code": "missing_voltage_level",
-        "tariff": "regional-fees-gemeinde-und-kantonalabgaben-423355",
-        "message": "the source states no voltage level"
-      },
-      {
-        "severity": "warning",
-        "code": "missing_voltage_level",
-        "tariff": "regional-fees-gemeinde-und-kantonalabgaben-6e91a1",
-        "message": "the source states no voltage level"
-      },
-      {
-        "severity": "warning",
         "code": "indistinguishable_tariffs",
-        "tariff": null,
-        "message": "3 tariffs share ('regional_fees', 'Gemeinde- und Kantonalabgaben', None, 'Privat- und Geschäftskunden, sofern zutreffend')"
+        "message": "3 tariffs share regional_fees / Gemeinde- und Kantonalabgaben / no voltage level / Privat- und Geschäftskunden, sofern zutreffend / 2026-01-01"
       }
     ]
   },
@@ -139,7 +67,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_standard",
       "prices": {
         "base": {
-          "price": 3.0,
+          "price": 3,
           "priceUnit": "CHF/M"
         },
         "energy": [
@@ -156,7 +84,7 @@
               "Th",
               "Fr",
               "Sa",
-              "So"
+              "Su"
             ],
             "from": "00:00",
             "to": "00:00",
@@ -179,7 +107,7 @@
               "Th",
               "Fr",
               "Sa",
-              "So"
+              "Su"
             ],
             "from": "00:00",
             "to": "00:00",
@@ -199,7 +127,7 @@
               "Th",
               "Fr",
               "Sa",
-              "So"
+              "Su"
             ],
             "from": "00:00",
             "to": "00:00",
@@ -222,7 +150,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_dynamic",
       "prices": {
         "base": {
-          "price": 3.0,
+          "price": 3,
           "priceUnit": "CHF/M"
         },
         "dynamic": {
@@ -243,7 +171,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_lighting",
       "prices": {
         "base": {
-          "price": 0.0,
+          "price": 0,
           "priceUnit": "CHF/M"
         },
         "energy": [
@@ -260,7 +188,7 @@
               "Th",
               "Fr",
               "Sa",
-              "So"
+              "Su"
             ],
             "from": "00:00",
             "to": "00:00",
@@ -283,7 +211,7 @@
               "Th",
               "Fr",
               "Sa",
-              "So"
+              "Su"
             ],
             "from": "00:00",
             "to": "00:00",
@@ -303,7 +231,7 @@
               "Th",
               "Fr",
               "Sa",
-              "So"
+              "Su"
             ],
             "from": "00:00",
             "to": "00:00",
@@ -326,7 +254,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_business",
       "prices": {
         "base": {
-          "price": 0.0,
+          "price": 0,
           "priceUnit": "CHF/M"
         },
         "energy": [
@@ -343,7 +271,7 @@
               "Th",
               "Fr",
               "Sa",
-              "So"
+              "Su"
             ],
             "from": "00:00",
             "to": "00:00",
@@ -366,7 +294,7 @@
               "Th",
               "Fr",
               "Sa",
-              "So"
+              "Su"
             ],
             "from": "00:00",
             "to": "00:00",
@@ -386,7 +314,7 @@
               "Th",
               "Fr",
               "Sa",
-              "So"
+              "Su"
             ],
             "from": "00:00",
             "to": "00:00",
@@ -410,7 +338,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400ST_inclFees",
       "prices": {
         "base": {
-          "price": 0.0,
+          "price": 0,
           "priceUnit": "CHF/M"
         },
         "energy": [
@@ -444,7 +372,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400F_inclFees",
       "prices": {
         "base": {
-          "price": 0.0,
+          "price": 0,
           "priceUnit": "CHF/M"
         },
         "energy": [
@@ -478,7 +406,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400WP_inclFees",
       "prices": {
         "base": {
-          "price": 0.0,
+          "price": 0,
           "priceUnit": "CHF/M"
         },
         "energy": [
@@ -512,7 +440,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D_inclFees",
       "prices": {
         "base": {
-          "price": 0.0,
+          "price": 0,
           "priceUnit": "CHF/M"
         },
         "refundStorage": {
@@ -539,7 +467,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400B_inclFees",
       "prices": {
         "base": {
-          "price": 0.0,
+          "price": 0,
           "priceUnit": "CHF/M"
         },
         "energy": [
@@ -573,7 +501,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400L_inclFees",
       "prices": {
         "base": {
-          "price": 0.0,
+          "price": 0,
           "priceUnit": "CHF/M"
         },
         "energy": [
@@ -599,7 +527,7 @@
               "Th",
               "Fr",
               "Sa",
-              "So"
+              "Su"
             ],
             "from": "00:00",
             "to": "00:00",
@@ -686,7 +614,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400LS_inclFees",
       "prices": {
         "base": {
-          "price": 0.0,
+          "price": 0,
           "priceUnit": "CHF/M"
         },
         "energy": [
@@ -712,7 +640,7 @@
               "Th",
               "Fr",
               "Sa",
-              "So"
+              "Su"
             ],
             "from": "00:00",
             "to": "00:00",
@@ -799,7 +727,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_16L_inclFees",
       "prices": {
         "base": {
-          "price": 0.0,
+          "price": 0,
           "priceUnit": "CHF/M"
         },
         "energy": [
@@ -825,7 +753,7 @@
               "Th",
               "Fr",
               "Sa",
-              "So"
+              "Su"
             ],
             "from": "00:00",
             "to": "00:00",
@@ -912,7 +840,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_16LS_inclFees",
       "prices": {
         "base": {
-          "price": 0.0,
+          "price": 0,
           "priceUnit": "CHF/M"
         },
         "energy": [
@@ -938,7 +866,7 @@
               "Th",
               "Fr",
               "Sa",
-              "So"
+              "Su"
             ],
             "from": "00:00",
             "to": "00:00",
@@ -1024,7 +952,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=metering_directNE7",
       "prices": {
         "base": {
-          "price": 5.0,
+          "price": 5,
           "priceUnit": "CHF/M"
         }
       },
@@ -1042,7 +970,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=metering_indirectNE7",
       "prices": {
         "base": {
-          "price": 25.0,
+          "price": 25,
           "priceUnit": "CHF/M"
         }
       },
@@ -1060,7 +988,7 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=metering_indirectNE5",
       "prices": {
         "base": {
-          "price": 50.0,
+          "price": 50,
           "priceUnit": "CHF/M"
         }
       },
@@ -1112,7 +1040,7 @@
           }
         ]
       },
-      "id": "regional-fees-gemeinde-und-kantonalabgaben-9a2874"
+      "id": "regional-fees-gemeinde-und-kantonalabgaben-94a342"
     },
     {
       "tariffName": "Gemeinde- und Kantonalabgaben",
@@ -1143,7 +1071,7 @@
           }
         ]
       },
-      "id": "regional-fees-gemeinde-und-kantonalabgaben-423355"
+      "id": "regional-fees-gemeinde-und-kantonalabgaben-2084c8"
     },
     {
       "tariffName": "Gemeinde- und Kantonalabgaben",
@@ -1168,7 +1096,7 @@
                 "weekdays": [],
                 "from": "00:00",
                 "to": "00:00",
-                "price": 0.0,
+                "price": 0,
                 "priceUnit": "CHF/kWh",
                 "months": []
               }
@@ -1177,7 +1105,7 @@
           }
         ]
       },
-      "id": "regional-fees-gemeinde-und-kantonalabgaben-6e91a1"
+      "id": "regional-fees-gemeinde-und-kantonalabgaben-321f8a"
     }
   ],
   "products": []

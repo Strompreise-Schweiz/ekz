@@ -1,0 +1,70 @@
+{
+  "$comment": "Summary of the checks of this utility, for https://data.strompreise-schweiz.ch/status.html.",
+  "utility": "EKZ (Elektrizitätswerke des Kantons Zürich)",
+  "slug": "ekz",
+  "years": [
+    {
+      "year": 2026,
+      "blocked": false,
+      "online": true,
+      "errors": 0,
+      "warnings": 5,
+      "accepted": 0,
+      "codes": {
+        "multilevel_with_single_price": 4,
+        "indistinguishable_tariffs": 1
+      }
+    },
+    {
+      "year": 2027,
+      "blocked": false,
+      "online": true,
+      "errors": 0,
+      "warnings": 5,
+      "accepted": 0,
+      "codes": {
+        "multilevel_with_single_price": 4,
+        "indistinguishable_tariffs": 1
+      }
+    }
+  ],
+  "vse": {
+    "sources": [
+      {
+        "name": "ekz-all",
+        "1.0.0": {
+          "valid": false,
+          "errors": 44
+        },
+        "1.0.1": {
+          "valid": true,
+          "errors": 0
+        }
+      }
+    ],
+    "published": [
+      {
+        "file": "tariffs/2026.json",
+        "1.0.0": {
+          "valid": false,
+          "errors": 24
+        },
+        "1.0.1": {
+          "valid": true,
+          "errors": 0
+        }
+      },
+      {
+        "file": "tariffs/2027.json",
+        "1.0.0": {
+          "valid": false,
+          "errors": 20
+        },
+        "1.0.1": {
+          "valid": true,
+          "errors": 0
+        }
+      }
+    ]
+  }
+}

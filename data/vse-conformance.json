@@ -1,0 +1,91 @@
+{
+  "$comment": "Whether the files follow the OpenAPI definitions of the VSE. sources are the files as the utility published them, published the files of this project. Information only: it does not block publication.",
+  "definitions": {
+    "1.0.0": "https://raw.githubusercontent.com/Strompreise-Schweiz/tariff-core/main/schemas/vse/ch-electricity-tariffs-openapi-1.0.0.yaml",
+    "1.0.1": "https://raw.githubusercontent.com/Strompreise-Schweiz/tariff-core/main/schemas/vse/ch-electricity-tariffs-openapi-1.0.1.yaml"
+  },
+  "sources": [
+    {
+      "name": "ekz-all",
+      "url": "https://www.ekz.ch/dam/ekz/privatkunden/strom/tarife-und-agb/tarife_ekz.json",
+      "sha256": "3ff88ef6b739c0b641d2b4efdc3bfef2093f431b8ed52647121db60a71b2d16e",
+      "results": {
+        "1.0.0": {
+          "valid": false,
+          "errors": 44,
+          "summary": [
+            {
+              "path": "tariffs/*/prices/energy/*/weekdays/*",
+              "message": "must be equal to one of the allowed values: Mo, Tu, We, Th, Fr, Sa, So",
+              "count": 23
+            },
+            {
+              "path": "tariffs/*",
+              "message": "must have required property 'customerVoltageLevel'",
+              "count": 21
+            }
+          ]
+        },
+        "1.0.1": {
+          "valid": true,
+          "errors": 0,
+          "summary": []
+        }
+      }
+    }
+  ],
+  "published": [
+    {
+      "file": "tariffs/2026.json",
+      "results": {
+        "1.0.0": {
+          "valid": false,
+          "errors": 24,
+          "summary": [
+            {
+              "path": "tariffs/*/prices/energy/*/weekdays/*",
+              "message": "must be equal to one of the allowed values: Mo, Tu, We, Th, Fr, Sa, So",
+              "count": 13
+            },
+            {
+              "path": "tariffs/*",
+              "message": "must have required property 'customerVoltageLevel'",
+              "count": 11
+            }
+          ]
+        },
+        "1.0.1": {
+          "valid": true,
+          "errors": 0,
+          "summary": []
+        }
+      }
+    },
+    {
+      "file": "tariffs/2027.json",
+      "results": {
+        "1.0.0": {
+          "valid": false,
+          "errors": 20,
+          "summary": [
+            {
+              "path": "tariffs/*",
+              "message": "must have required property 'customerVoltageLevel'",
+              "count": 10
+            },
+            {
+              "path": "tariffs/*/prices/energy/*/weekdays/*",
+              "message": "must be equal to one of the allowed values: Mo, Tu, We, Th, Fr, Sa, So",
+              "count": 10
+            }
+          ]
+        },
+        "1.0.1": {
+          "valid": true,
+          "errors": 0,
+          "summary": []
+        }
+      }
+    }
+  ]
+}
