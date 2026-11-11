@@ -1,5 +1,11 @@
 # EKZ (Elektrizitätswerke des Kantons Zürich)
 
+[![VSE 1.0.0](https://img.shields.io/endpoint?url=https%3A%2F%2Fdata.strompreise-schweiz.ch%2Fekz%2Fbadges%2Fvse-1.0.0.json)](data/vse-conformance.json)
+[![VSE 1.0.1](https://img.shields.io/endpoint?url=https%3A%2F%2Fdata.strompreise-schweiz.ch%2Fekz%2Fbadges%2Fvse-1.0.1.json)](data/vse-conformance.json)
+
+The badges show whether the tariff file the utility publishes follows the
+[OpenAPI definitions of the VSE](https://github.com/Strompreise-Schweiz/tariff-core/tree/main/schemas/vse). Details in [`data/vse-conformance.json`](data/vse-conformance.json).
+
 Tariff data of EKZ (Elektrizitätswerke des Kantons Zürich), published by the
 [Strompreise Schweiz](https://github.com/Strompreise-Schweiz) initiative. All logic lives in
 [`tariff-core`](https://github.com/Strompreise-Schweiz/tariff-core); this repo holds configuration,
