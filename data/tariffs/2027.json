@@ -4,23 +4,26 @@
   "dsoNumber": 10153012345,
   "_meta": {
     "schemaVersion": "1.0",
+    "vseVersion": "1.0.1",
+    "generator": {
+      "name": "tariff-core",
+      "version": "3.1.0",
+      "url": "https://github.com/Strompreise-Schweiz/tariff-core"
+    },
     "year": 2027,
-    "generatedAt": "2026-11-11T21:41:37+00:00",
+    "generatedAt": "2026-11-11T22:17:54+00:00",
     "source": [
       {
         "name": "ekz-all",
         "url": "https://www.ekz.ch/dam/ekz/privatkunden/strom/tarife-und-agb/tarife_ekz.json",
-        "sha256": "56267640b63451f5cc025555323f0ffc6fd27f624a5d6b295e781062b37146fc"
+        "sha256": "56267640b63451f5cc025555323f0ffc6fd27f624a5d6b295e781062b37146fc",
+        "conformsTo": [
+          "1.0.1"
+        ]
       }
     ],
     "pricesExcludeVat": true,
-    "repairs": [
-      {
-        "code": "end_of_day_to_midnight",
-        "detail": "converted 23:59 to 00:00: the VSE FAQ ends a day at 00:00",
-        "count": 23
-      }
-    ],
+    "repairs": [],
     "overrides": [],
     "issues": [
       {
@@ -52,7 +55,8 @@
         "code": "indistinguishable_tariffs",
         "message": "3 tariffs share regional_fees / Gemeinde- und Kantonalabgaben / no voltage level / Privat- und Geschäftskunden, sofern zutreffend / 2027-01-01"
       }
-    ]
+    ],
+    "excluded": []
   },
   "tariffs": [
     {
@@ -87,7 +91,7 @@
               "Su"
             ],
             "from": "00:00",
-            "to": "00:00",
+            "to": "23:59",
             "price": 0.13,
             "priceUnit": "CHF/kWh"
           },
@@ -110,7 +114,7 @@
               "Su"
             ],
             "from": "00:00",
-            "to": "00:00",
+            "to": "23:59",
             "price": 0.088,
             "priceUnit": "CHF/kWh"
           },
@@ -130,7 +134,7 @@
               "Su"
             ],
             "from": "00:00",
-            "to": "00:00",
+            "to": "23:59",
             "price": 0.13,
             "priceUnit": "CHF/kWh"
           }
@@ -191,7 +195,7 @@
               "Su"
             ],
             "from": "00:00",
-            "to": "00:00",
+            "to": "23:59",
             "price": 0.13,
             "priceUnit": "CHF/kWh"
           },
@@ -214,7 +218,7 @@
               "Su"
             ],
             "from": "00:00",
-            "to": "00:00",
+            "to": "23:59",
             "price": 0.088,
             "priceUnit": "CHF/kWh"
           },
@@ -234,7 +238,7 @@
               "Su"
             ],
             "from": "00:00",
-            "to": "00:00",
+            "to": "23:59",
             "price": 0.13,
             "priceUnit": "CHF/kWh"
           }
@@ -528,7 +532,7 @@
               "Su"
             ],
             "from": "00:00",
-            "to": "00:00",
+            "to": "23:59",
             "price": 0.047,
             "priceUnit": "CHF/kWh"
           }
@@ -641,7 +645,7 @@
               "Su"
             ],
             "from": "00:00",
-            "to": "00:00",
+            "to": "23:59",
             "price": 0.0815,
             "priceUnit": "CHF/kWh"
           }
@@ -754,7 +758,7 @@
               "Su"
             ],
             "from": "00:00",
-            "to": "00:00",
+            "to": "23:59",
             "price": 0.0395,
             "priceUnit": "CHF/kWh"
           }
@@ -867,7 +871,7 @@
               "Su"
             ],
             "from": "00:00",
-            "to": "00:00",
+            "to": "23:59",
             "price": 0.0605,
             "priceUnit": "CHF/kWh"
           }

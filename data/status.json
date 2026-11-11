@@ -10,6 +10,7 @@
       "errors": 0,
       "warnings": 5,
       "accepted": 0,
+      "excluded": 0,
       "codes": {
         "multilevel_with_single_price": 4,
         "indistinguishable_tariffs": 1
@@ -22,6 +23,7 @@
       "errors": 0,
       "warnings": 5,
       "accepted": 0,
+      "excluded": 0,
       "codes": {
         "multilevel_with_single_price": 4,
         "indistinguishable_tariffs": 1
