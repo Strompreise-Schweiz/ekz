@@ -3,6 +3,7 @@
   "organization": "EKZ (Elektrizitätswerke des Kantons Zürich)",
   "slug": "ekz",
   "vse_id": "CH10153012345",
+  "elcom_id": 486,
   "website": "https://www.ekz.ch",
   "license": "CC-BY-4.0",
   "repository": "https://github.com/Strompreise-Schweiz/ekz",
