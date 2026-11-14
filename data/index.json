@@ -1,5 +1,5 @@
 {
-  "$comment": "Stable entry point for this organization. All URLs below stay valid. Every path under data/ is also served under site.",
+  "$comment": "Stable entry point for this utility. Every path under data/ is also served under site.",
   "organization": "EKZ (Elektrizitätswerke des Kantons Zürich)",
   "slug": "ekz",
   "vse_id": "CH10153012345",
@@ -8,51 +8,50 @@
   "license": "CC-BY-4.0",
   "repository": "https://github.com/Strompreise-Schweiz/ekz",
   "site": "https://data.strompreise-schweiz.ch/ekz/",
-  "static": {
-    "current": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/tariffs/current.json",
+  "checks": "https://data.strompreise-schweiz.ch/ekz/checks.json",
+  "tariffs": {
+    "current": "https://data.strompreise-schweiz.ch/ekz/tariffs/current.json",
     "years": {
-      "2026": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/tariffs/2026.json",
-      "2027": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/tariffs/2027.json"
+      "2026": "https://data.strompreise-schweiz.ch/ekz/tariffs/2026.json",
+      "2027": "https://data.strompreise-schweiz.ch/ekz/tariffs/2027.json"
     }
   },
-  "vse_conformance": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/vse-conformance.json",
-  "status": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/status.json",
-  "dynamic": [
+  "prices": [
     {
       "id": "electricity-dynamic",
       "name": "EKZ Energie Dynamisch",
-      "components": [
-        "electricity"
-      ],
-      "valid_from": null,
-      "valid_to": null,
-      "latest": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/electricity-dynamic/latest.json",
-      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/electricity-dynamic/vse/{year}/{date}.json",
-      "source": "https://api.tariffs.ekz.ch/v1/tariffs"
+      "latest": "https://data.strompreise-schweiz.ch/ekz/prices/electricity-dynamic/latest.json",
+      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/prices/electricity-dynamic/{year}/{date}.json",
+      "source": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_dynamic"
     },
     {
       "id": "grid-400d",
       "name": "EKZ Netz 400D including fees (2026)",
-      "components": [
-        "grid"
-      ],
-      "valid_from": null,
-      "valid_to": "2026-12-31",
-      "latest": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/grid-400d/latest.json",
-      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/grid-400d/vse/{year}/{date}.json",
-      "source": "https://api.tariffs.ekz.ch/v1/tariffs"
+      "latest": "https://data.strompreise-schweiz.ch/ekz/prices/grid-400d/latest.json",
+      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/prices/grid-400d/{year}/{date}.json",
+      "source": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D_inclFees"
     },
     {
       "id": "integrated-400d",
       "name": "EKZ 400D integrated (2026)",
-      "components": [
-        "integrated"
-      ],
-      "valid_from": null,
-      "valid_to": "2026-12-31",
-      "latest": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/integrated-400d/latest.json",
-      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/dynamic/integrated-400d/vse/{year}/{date}.json",
+      "latest": "https://data.strompreise-schweiz.ch/ekz/prices/integrated-400d/latest.json",
+      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/prices/integrated-400d/{year}/{date}.json",
+      "source": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=integrated_400D"
+    },
+    {
+      "id": "legacy-default",
+      "name": "EKZ standard tariff, archive up to November 2026",
+      "latest": null,
+      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/prices/legacy-default/{year}/{date}.json",
       "source": "https://api.tariffs.ekz.ch/v1/tariffs"
+    }
+  ],
+  "products": [
+    {
+      "id": "dynamisch-400d",
+      "name": "EKZ Energie Dynamisch + EKZ Netz 400D",
+      "latest": "https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d/latest.json",
+      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/products/dynamisch-400d/{year}/{date}.json"
     }
   ]
 }

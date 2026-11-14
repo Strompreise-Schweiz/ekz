@@ -8,7 +8,7 @@ on:
     paths:
       - "data/**"
   workflow_run:
-    workflows: ["Fetch dynamic tariffs", "Publish static tariffs"]
+    workflows: ["Update prices", "Update tariffs"]
     types: [completed]
     branches: [main]
   workflow_dispatch: {}

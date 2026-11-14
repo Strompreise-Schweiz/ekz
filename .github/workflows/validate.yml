@@ -3,7 +3,9 @@ name: Validate
 on:
   push:
     paths-ignore:
-      - "data/dynamic/**"
+      - "data/sources/prices/**"
+      - "data/prices/**"
+      - "data/products/**"
   pull_request:
 
 permissions:

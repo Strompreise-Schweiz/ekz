@@ -1,0 +1,70 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Strompreise-Schweiz/tariff-core/main/schemas/curation/v1.schema.json",
+  "year": 2027,
+  "products": [
+    {
+      "id": "dynamisch-400d-cluster-1",
+      "name": "EKZ Energie Dynamisch + EKZ Netz 400D Cluster 1",
+      "status": "suggested",
+      "note": "Proposed from the yearly file, not yet checked against the price sheet. Direct metering at network level 7. The regional fees depend on the municipality and are not included.",
+      "selection": {
+        "kind": "grid-cluster",
+        "value": "1",
+        "howToFind": "EKZ assigns the cluster per tariff year and shows it in myEKZ."
+      },
+      "components": {
+        "electricity": "electricity-ekz-energie-dynamisch",
+        "grid": "grid-ekz-netz-400d-cluster-1-sdl-stromreserve-solidarisierte-kost-ne7",
+        "metering": "metering-messung-direkt-netzebene-7"
+      }
+    },
+    {
+      "id": "dynamisch-400d-cluster-2",
+      "name": "EKZ Energie Dynamisch + EKZ Netz 400D Cluster 2",
+      "status": "suggested",
+      "note": "Proposed from the yearly file, not yet checked against the price sheet. Direct metering at network level 7. The regional fees depend on the municipality and are not included.",
+      "selection": {
+        "kind": "grid-cluster",
+        "value": "2",
+        "howToFind": "EKZ assigns the cluster per tariff year and shows it in myEKZ."
+      },
+      "components": {
+        "electricity": "electricity-ekz-energie-dynamisch",
+        "grid": "grid-ekz-netz-400d-cluster-2-sdl-stromreserve-solidarisierte-kost-ne7",
+        "metering": "metering-messung-direkt-netzebene-7"
+      }
+    },
+    {
+      "id": "dynamisch-400d-cluster-3",
+      "name": "EKZ Energie Dynamisch + EKZ Netz 400D Cluster 3",
+      "status": "suggested",
+      "note": "Proposed from the yearly file, not yet checked against the price sheet. Direct metering at network level 7. The regional fees depend on the municipality and are not included.",
+      "selection": {
+        "kind": "grid-cluster",
+        "value": "3",
+        "howToFind": "EKZ assigns the cluster per tariff year and shows it in myEKZ."
+      },
+      "components": {
+        "electricity": "electricity-ekz-energie-dynamisch",
+        "grid": "grid-ekz-netz-400d-cluster-3-sdl-stromreserve-solidarisierte-kost-ne7",
+        "metering": "metering-messung-direkt-netzebene-7"
+      }
+    },
+    {
+      "id": "dynamisch-400d-cluster-4",
+      "name": "EKZ Energie Dynamisch + EKZ Netz 400D Cluster 4",
+      "status": "suggested",
+      "note": "Proposed from the yearly file, not yet checked against the price sheet. Direct metering at network level 7. The regional fees depend on the municipality and are not included.",
+      "selection": {
+        "kind": "grid-cluster",
+        "value": "4",
+        "howToFind": "EKZ assigns the cluster per tariff year and shows it in myEKZ."
+      },
+      "components": {
+        "electricity": "electricity-ekz-energie-dynamisch",
+        "grid": "grid-ekz-netz-400d-cluster-4-sdl-stromreserve-solidarisierte-kost-ne7",
+        "metering": "metering-messung-direkt-netzebene-7"
+      }
+    }
+  ]
+}

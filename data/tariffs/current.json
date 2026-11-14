@@ -3,60 +3,24 @@
   "dsoName": "EKZ",
   "dsoNumber": 10153012345,
   "_meta": {
-    "schemaVersion": "1.0",
+    "schemaVersion": "2.0",
     "vseVersion": "1.0.1",
     "generator": {
       "name": "tariff-core",
-      "version": "3.1.0",
+      "version": "4.0.0",
       "url": "https://github.com/Strompreise-Schweiz/tariff-core"
     },
     "year": 2026,
-    "generatedAt": "2026-11-11T22:17:54+00:00",
+    "pricesExcludeVat": true,
     "source": [
       {
         "name": "ekz-all",
         "url": "https://www.ekz.ch/dam/ekz/privatkunden/strom/tarife-und-agb/tarife_ekz.json",
-        "sha256": "56267640b63451f5cc025555323f0ffc6fd27f624a5d6b295e781062b37146fc",
-        "conformsTo": [
-          "1.0.1"
-        ]
+        "sha256": "3ff88ef6b739c0b641d2b4efdc3bfef2093f431b8ed52647121db60a71b2d16e"
       }
     ],
-    "pricesExcludeVat": true,
     "repairs": [],
-    "overrides": [],
-    "issues": [
-      {
-        "severity": "warning",
-        "code": "multilevel_with_single_price",
-        "tariff": "grid-ekz-netz-400l-sdl-stromreserve-solidarisierte-kosten-bundesa-ne7",
-        "message": "only one price level: should this be constant?"
-      },
-      {
-        "severity": "warning",
-        "code": "multilevel_with_single_price",
-        "tariff": "grid-ekz-netz-400ls-sdl-stromreserve-solidarisierte-kosten-bundes-ne7",
-        "message": "only one price level: should this be constant?"
-      },
-      {
-        "severity": "warning",
-        "code": "multilevel_with_single_price",
-        "tariff": "grid-ekz-netz-16l-sdl-stromreserve-solidarisierte-kosten-bundesab-ne5",
-        "message": "only one price level: should this be constant?"
-      },
-      {
-        "severity": "warning",
-        "code": "multilevel_with_single_price",
-        "tariff": "grid-ekz-netz-16ls-sdl-stromreserve-solidarisierte-kosten-bundesa-ne5",
-        "message": "only one price level: should this be constant?"
-      },
-      {
-        "severity": "warning",
-        "code": "indistinguishable_tariffs",
-        "message": "3 tariffs share regional_fees / Gemeinde- und Kantonalabgaben / no voltage level / Privat- und Geschäftskunden, sofern zutreffend / 2026-01-01"
-      }
-    ],
-    "excluded": []
+    "corrections": []
   },
   "tariffs": [
     {
@@ -158,7 +122,8 @@
           "priceUnit": "CHF/M"
         },
         "dynamic": {
-          "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_dynamic"
+          "url": "https://data.strompreise-schweiz.ch/ekz/prices/electricity-dynamic/latest.json",
+          "sourceUrl": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_dynamic"
         }
       },
       "id": "electricity-ekz-energie-dynamisch"
@@ -453,7 +418,8 @@
           "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=refund_400D"
         },
         "dynamic": {
-          "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D_inclFees"
+          "url": "https://data.strompreise-schweiz.ch/ekz/prices/grid-400d/latest.json",
+          "sourceUrl": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D_inclFees"
         }
       },
       "id": "grid-ekz-netz-400d-sdl-stromreserve-solidarisierte-kosten-bundesa-ne7"
@@ -1112,5 +1078,17 @@
       "id": "regional-fees-gemeinde-und-kantonalabgaben-321f8a"
     }
   ],
-  "products": []
+  "products": [
+    {
+      "id": "dynamisch-400d",
+      "name": "EKZ Energie Dynamisch + EKZ Netz 400D",
+      "status": "suggested",
+      "note": "Proposed from the yearly file, not yet checked against the price sheet. Direct metering at network level 7. The regional fees depend on the municipality and are not included.",
+      "components": {
+        "electricity": "electricity-ekz-energie-dynamisch",
+        "grid": "grid-ekz-netz-400d-sdl-stromreserve-solidarisierte-kosten-bundesa-ne7",
+        "metering": "metering-messung-direkt-netzebene-7"
+      }
+    }
+  ]
 }

@@ -1,0 +1,31 @@
+name: Update tariffs
+
+# The yearly tariff file: download, then build every published file. Also after a change to
+# curation/ or config/, so a correction is online within minutes.
+on:
+  schedule:
+    # Tariffs are due by 31 August, but utilities also correct them later.
+    - cron: "20 6 * * 1"
+      timezone: "Europe/Zurich"
+    - cron: "20 6 1-15 9 *"
+      timezone: "Europe/Zurich"
+  push:
+    branches: [main]
+    paths:
+      - "curation/**"
+      - "config/source.json"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+# Shared with "Update prices": both commit data/.
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    uses: Strompreise-Schweiz/tariff-core/.github/workflows/reusable-update.yml@main
+    with:
+      fetch: tariffs

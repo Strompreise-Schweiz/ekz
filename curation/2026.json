@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Strompreise-Schweiz/tariff-core/main/schemas/curation/v1.schema.json",
+  "year": 2026,
+  "products": [
+    {
+      "id": "dynamisch-400d",
+      "name": "EKZ Energie Dynamisch + EKZ Netz 400D",
+      "status": "suggested",
+      "note": "Proposed from the yearly file, not yet checked against the price sheet. Direct metering at network level 7. The regional fees depend on the municipality and are not included.",
+      "components": {
+        "electricity": "electricity-ekz-energie-dynamisch",
+        "grid": "grid-ekz-netz-400d-sdl-stromreserve-solidarisierte-kosten-bundesa-ne7",
+        "metering": "metering-messung-direkt-netzebene-7"
+      }
+    }
+  ]
+}

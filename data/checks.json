@@ -1,0 +1,323 @@
+{
+  "$comment": "What is wrong with the data of this utility. Errors block a year, warnings and accepted issues do not. Information on the VSE conformance does not block anything.",
+  "utility": "EKZ (Elektrizitätswerke des Kantons Zürich)",
+  "slug": "ekz",
+  "summary": {
+    "errors": 0,
+    "warnings": 10,
+    "accepted": 0,
+    "incompleteDays": 1
+  },
+  "vseDefinitions": {
+    "1.0.0": "https://raw.githubusercontent.com/Strompreise-Schweiz/tariff-core/main/schemas/vse/ch-electricity-tariffs-openapi-1.0.0.yaml",
+    "1.0.1": "https://raw.githubusercontent.com/Strompreise-Schweiz/tariff-core/main/schemas/vse/ch-electricity-tariffs-openapi-1.0.1.yaml"
+  },
+  "sources": {
+    "tariffs": [
+      {
+        "name": "ekz-all",
+        "url": "https://www.ekz.ch/dam/ekz/privatkunden/strom/tarife-und-agb/tarife_ekz.json",
+        "sha256": "3ff88ef6b739c0b641d2b4efdc3bfef2093f431b8ed52647121db60a71b2d16e",
+        "vse": {
+          "1.0.0": {
+            "valid": false,
+            "errors": 44,
+            "summary": [
+              {
+                "path": "tariffs/*/prices/energy/*/weekdays/*",
+                "message": "must be equal to one of the allowed values: Mo, Tu, We, Th, Fr, Sa, So",
+                "count": 23
+              },
+              {
+                "path": "tariffs/*",
+                "message": "must have required property 'customerVoltageLevel'",
+                "count": 21
+              }
+            ]
+          },
+          "1.0.1": {
+            "valid": true,
+            "errors": 0,
+            "summary": []
+          }
+        }
+      }
+    ],
+    "prices": [
+      {
+        "id": "electricity-dynamic",
+        "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_dynamic",
+        "enabled": true,
+        "days": 8,
+        "first": "2026-11-08",
+        "last": "2026-11-15"
+      },
+      {
+        "id": "grid-400d",
+        "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D_inclFees",
+        "enabled": true,
+        "days": 8,
+        "first": "2026-11-08",
+        "last": "2026-11-15"
+      },
+      {
+        "id": "integrated-400d",
+        "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=integrated_400D",
+        "enabled": true,
+        "days": 8,
+        "first": "2026-11-08",
+        "last": "2026-11-15"
+      },
+      {
+        "id": "grid-400d-cluster-1",
+        "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D1_inclFees",
+        "enabled": true,
+        "days": 0,
+        "first": null,
+        "last": null
+      },
+      {
+        "id": "grid-400d-cluster-2",
+        "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D2_inclFees",
+        "enabled": true,
+        "days": 0,
+        "first": null,
+        "last": null
+      },
+      {
+        "id": "grid-400d-cluster-3",
+        "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D3_inclFees",
+        "enabled": true,
+        "days": 0,
+        "first": null,
+        "last": null
+      },
+      {
+        "id": "grid-400d-cluster-4",
+        "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D4_inclFees",
+        "enabled": true,
+        "days": 0,
+        "first": null,
+        "last": null
+      },
+      {
+        "id": "legacy-default",
+        "url": "https://api.tariffs.ekz.ch/v1/tariffs",
+        "enabled": false,
+        "days": 64,
+        "first": "2026-08-25",
+        "last": "2026-11-01"
+      }
+    ]
+  },
+  "tariffs": [
+    {
+      "year": 2026,
+      "published": true,
+      "online": true,
+      "repairs": [],
+      "issues": [
+        {
+          "severity": "warning",
+          "code": "multilevel_with_single_price",
+          "tariff": "grid-ekz-netz-400l-sdl-stromreserve-solidarisierte-kosten-bundesa-ne7",
+          "message": "only one price level: should this be constant?"
+        },
+        {
+          "severity": "warning",
+          "code": "multilevel_with_single_price",
+          "tariff": "grid-ekz-netz-400ls-sdl-stromreserve-solidarisierte-kosten-bundes-ne7",
+          "message": "only one price level: should this be constant?"
+        },
+        {
+          "severity": "warning",
+          "code": "multilevel_with_single_price",
+          "tariff": "grid-ekz-netz-16l-sdl-stromreserve-solidarisierte-kosten-bundesab-ne5",
+          "message": "only one price level: should this be constant?"
+        },
+        {
+          "severity": "warning",
+          "code": "multilevel_with_single_price",
+          "tariff": "grid-ekz-netz-16ls-sdl-stromreserve-solidarisierte-kosten-bundesa-ne5",
+          "message": "only one price level: should this be constant?"
+        },
+        {
+          "severity": "warning",
+          "code": "indistinguishable_tariffs",
+          "message": "3 tariffs share regional_fees / Gemeinde- und Kantonalabgaben / no voltage level / Privat- und Geschäftskunden, sofern zutreffend / 2026-01-01"
+        }
+      ],
+      "excluded": [],
+      "vse": {
+        "1.0.0": {
+          "valid": false,
+          "errors": 24,
+          "summary": [
+            {
+              "path": "tariffs/*/prices/energy/*/weekdays/*",
+              "message": "must be equal to one of the allowed values: Mo, Tu, We, Th, Fr, Sa, So",
+              "count": 13
+            },
+            {
+              "path": "tariffs/*",
+              "message": "must have required property 'customerVoltageLevel'",
+              "count": 11
+            }
+          ]
+        },
+        "1.0.1": {
+          "valid": true,
+          "errors": 0,
+          "summary": []
+        }
+      }
+    },
+    {
+      "year": 2027,
+      "published": true,
+      "online": true,
+      "repairs": [],
+      "issues": [
+        {
+          "severity": "warning",
+          "code": "multilevel_with_single_price",
+          "tariff": "grid-ekz-netz-400l-sdl-stromreserve-solidarisierte-kosten-bundesa-ne7",
+          "message": "only one price level: should this be constant?"
+        },
+        {
+          "severity": "warning",
+          "code": "multilevel_with_single_price",
+          "tariff": "grid-ekz-netz-400ls-sdl-stromreserve-solidarisierte-kosten-bundes-ne7",
+          "message": "only one price level: should this be constant?"
+        },
+        {
+          "severity": "warning",
+          "code": "multilevel_with_single_price",
+          "tariff": "grid-ekz-netz-16l-sdl-stromreserve-solidarisierte-kosten-bundesab-ne5",
+          "message": "only one price level: should this be constant?"
+        },
+        {
+          "severity": "warning",
+          "code": "multilevel_with_single_price",
+          "tariff": "grid-ekz-netz-16ls-sdl-stromreserve-solidarisierte-kosten-bundesa-ne5",
+          "message": "only one price level: should this be constant?"
+        },
+        {
+          "severity": "warning",
+          "code": "indistinguishable_tariffs",
+          "message": "3 tariffs share regional_fees / Gemeinde- und Kantonalabgaben / no voltage level / Privat- und Geschäftskunden, sofern zutreffend / 2027-01-01"
+        }
+      ],
+      "excluded": [],
+      "vse": {
+        "1.0.0": {
+          "valid": false,
+          "errors": 20,
+          "summary": [
+            {
+              "path": "tariffs/*",
+              "message": "must have required property 'customerVoltageLevel'",
+              "count": 10
+            },
+            {
+              "path": "tariffs/*/prices/energy/*/weekdays/*",
+              "message": "must be equal to one of the allowed values: Mo, Tu, We, Th, Fr, Sa, So",
+              "count": 10
+            }
+          ]
+        },
+        "1.0.1": {
+          "valid": true,
+          "errors": 0,
+          "summary": []
+        }
+      }
+    }
+  ],
+  "prices": [
+    {
+      "id": "electricity-dynamic",
+      "days": 8,
+      "incomplete": []
+    },
+    {
+      "id": "grid-400d",
+      "days": 8,
+      "incomplete": []
+    },
+    {
+      "id": "integrated-400d",
+      "days": 8,
+      "incomplete": []
+    },
+    {
+      "id": "grid-400d-cluster-1",
+      "days": 0,
+      "incomplete": []
+    },
+    {
+      "id": "grid-400d-cluster-2",
+      "days": 0,
+      "incomplete": []
+    },
+    {
+      "id": "grid-400d-cluster-3",
+      "days": 0,
+      "incomplete": []
+    },
+    {
+      "id": "grid-400d-cluster-4",
+      "days": 0,
+      "incomplete": []
+    },
+    {
+      "id": "legacy-default",
+      "days": 64,
+      "incomplete": [
+        {
+          "date": "2026-10-25",
+          "issues": [
+            "ends at 2026-10-25T23:00:00+01:00, expected 2026-10-26T00:00:00+01:00"
+          ]
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "dynamisch-400d",
+      "year": 2026,
+      "days": 8,
+      "incomplete": [],
+      "notes": []
+    },
+    {
+      "id": "dynamisch-400d-cluster-1",
+      "year": 2027,
+      "days": 0,
+      "incomplete": [],
+      "notes": []
+    },
+    {
+      "id": "dynamisch-400d-cluster-2",
+      "year": 2027,
+      "days": 0,
+      "incomplete": [],
+      "notes": []
+    },
+    {
+      "id": "dynamisch-400d-cluster-3",
+      "year": 2027,
+      "days": 0,
+      "incomplete": [],
+      "notes": []
+    },
+    {
+      "id": "dynamisch-400d-cluster-4",
+      "year": 2027,
+      "days": 0,
+      "incomplete": [],
+      "notes": []
+    }
+  ]
+}
