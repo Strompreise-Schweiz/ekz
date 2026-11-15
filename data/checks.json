@@ -6,7 +6,7 @@
     "errors": 0,
     "warnings": 10,
     "accepted": 0,
-    "incompleteDays": 1
+    "incompleteDays": 2
   },
   "vseDefinitions": {
     "1.0.0": "https://raw.githubusercontent.com/Strompreise-Schweiz/tariff-core/main/schemas/vse/ch-electricity-tariffs-openapi-1.0.0.yaml",
@@ -48,9 +48,9 @@
         "id": "electricity-dynamic",
         "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_dynamic",
         "enabled": true,
-        "days": 9,
+        "days": 10,
         "first": "2026-11-08",
-        "last": "2026-11-16"
+        "last": "2026-11-17"
       },
       {
         "id": "grid-400d",
@@ -237,8 +237,15 @@
   "prices": [
     {
       "id": "electricity-dynamic",
-      "days": 9,
-      "incomplete": []
+      "days": 10,
+      "incomplete": [
+        {
+          "date": "2026-11-17",
+          "issues": [
+            "96 of 96 intervals have no price per kWh"
+          ]
+        }
+      ]
     },
     {
       "id": "grid-400d",
@@ -288,7 +295,14 @@
       "id": "dynamisch-400d",
       "year": 2026,
       "days": 9,
-      "incomplete": [],
+      "incomplete": [
+        {
+          "date": "2026-11-17",
+          "issues": [
+            "no day prices of grid-400d"
+          ]
+        }
+      ],
       "notes": []
     },
     {
