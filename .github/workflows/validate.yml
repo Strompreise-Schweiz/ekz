@@ -3,8 +3,8 @@ name: Validate
 on:
   push:
     paths-ignore:
-      - "data/sources/prices/**"
-      - "data/prices/**"
+      - "data/sources/days/**"
+      - "data/tariffs/*/**"
       - "data/products/**"
   pull_request:
 

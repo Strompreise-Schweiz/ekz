@@ -3,6 +3,28 @@
   "year": 2027,
   "products": [
     {
+      "id": "standard",
+      "name": "EKZ Energie Erneuerbar + EKZ Netz 400ST",
+      "default": true,
+      "note": "Electricity and grid are the tariffs EKZ marks with standardBasegroup. Metering and fees are proposed, not yet checked against the price sheet.",
+      "components": {
+        "electricity": "electricity-ekz-energie-erneuerbar",
+        "grid": "grid-ekz-netz-400st-sdl-stromreserve-solidarisierte-kosten-bundes-ne7",
+        "metering": {
+          "tariff": "metering-messung-direkt-netzebene-7",
+          "options": [
+            "metering-messung-indirekt-netzebene-7",
+            "metering-virtueller-messpunkt"
+          ],
+          "howToFind": "Depends on the connection. Direct metering is the usual case for a household."
+        },
+        "regional_fees": {
+          "tariff": "regional-fees-gemeinde-und-kantonalabgaben-94a342",
+          "byMunicipality": true
+        }
+      }
+    },
+    {
       "id": "dynamisch-400d-cluster-1",
       "name": "EKZ Energie Dynamisch + EKZ Netz 400D Cluster 1",
       "status": "suggested",

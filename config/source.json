@@ -62,13 +62,6 @@
       "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D4_inclFees",
       "valid_from": "2027-01-01",
       "note": "EKZ assigns each customer to a cluster by transformer station, for one tariff year. The customer sees it in myEKZ. EKZ publishes no list."
-    },
-    {
-      "id": "legacy-default",
-      "name": "EKZ standard tariff, archive up to November 2026",
-      "url": "https://api.tariffs.ekz.ch/v1/tariffs",
-      "enabled": false,
-      "note": "Fetched without tariff_name, so the API answered with the standard tariff and one price per day, not with a dynamic tariff. Kept as history, no longer fetched."
     }
   ]
 }

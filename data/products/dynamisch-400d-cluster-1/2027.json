@@ -14,10 +14,86 @@
   "dsoName": "EKZ",
   "dsoNumber": 10153012345,
   "pricesExcludeVat": true,
-  "total": {"fixed": {"total": []}, "windows": [], "dynamic": []},
-  "missing": ["electricity", "grid", "metering", "regional_fees"],
+  "total": {
+    "fixed": {
+      "electricity": [{"unit": "CHF_m", "value": 3}],
+      "grid": [{"unit": "CHF_m", "value": 0}],
+      "metering": [{"unit": "CHF_m", "value": 6.2}],
+      "total": [{"unit": "CHF_m", "value": 9.2}]
+    },
+    "windows": [],
+    "dynamic": ["electricity", "grid"]
+  },
+  "missing": ["regional_fees"],
   "municipalities": [],
-  "components": {},
+  "components": {
+    "electricity": {
+      "basis": "suggested",
+      "tariff": {
+        "tariffName": "EKZ Energie Dynamisch",
+        "tariffType": "electricity",
+        "standardBasegroup": false,
+        "tariffForm": "dynamic",
+        "startDate": "2027-01-01",
+        "endDate": "2027-12-31",
+        "comment": "ohne MwSt.",
+        "customerType": "Privat- und Geschäftskunden bis 100'000 kWh/a",
+        "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_dynamic",
+        "prices": {
+          "base": {"price": 3, "priceUnit": "CHF/M"},
+          "dynamic": {
+            "url": "https://data.strompreise-schweiz.ch/ekz/tariffs/current/electricity-ekz-energie-dynamisch.json",
+            "sourceUrl": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_dynamic"
+          }
+        },
+        "id": "electricity-ekz-energie-dynamisch"
+      }
+    },
+    "grid": {
+      "basis": "suggested",
+      "tariff": {
+        "customerVoltageLevel": 7,
+        "tariffName": "EKZ Netz 400D Cluster 1 + SDL, Stromreserve, Solidarisierte Kosten, Bundesabgaben",
+        "tariffType": "grid",
+        "standardBasegroup": false,
+        "tariffForm": "dynamic",
+        "startDate": "2027-01-01",
+        "endDate": "2027-12-31",
+        "comment": "ohne MwSt.",
+        "customerType": "Privat- und Geschäftskunden bis 100'000 kWh/a",
+        "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D1_inclFees",
+        "prices": {
+          "base": {"price": 0, "priceUnit": "CHF/M"},
+          "refundStorage": {
+            "price": 0.1065,
+            "priceUnit": "CHF/kWh",
+            "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=refund_400D1"
+          },
+          "dynamic": {
+            "url": "https://data.strompreise-schweiz.ch/ekz/tariffs/current/grid-ekz-netz-400d-cluster-1-sdl-stromreserve-solidarisierte-kost-ne7.json",
+            "sourceUrl": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D1_inclFees"
+          }
+        },
+        "id": "grid-ekz-netz-400d-cluster-1-sdl-stromreserve-solidarisierte-kost-ne7"
+      }
+    },
+    "metering": {
+      "basis": "suggested",
+      "tariff": {
+        "tariffName": "Messung direkt Netzebene 7",
+        "tariffType": "metering",
+        "standardBasegroup": false,
+        "tariffForm": "constant",
+        "startDate": "2027-01-01",
+        "endDate": "2027-12-31",
+        "comment": "ohne MwSt.",
+        "customerType": "Kunden mit entsprechendem Messpunkt",
+        "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=metering_directNE7",
+        "prices": {"base": {"price": 6.2, "priceUnit": "CHF/M"}},
+        "id": "metering-messung-direkt-netzebene-7"
+      }
+    }
+  },
   "_meta": {
     "schemaVersion": "2.0",
     "vseVersion": "1.0.1",
@@ -27,7 +103,13 @@
       "url": "https://github.com/Strompreise-Schweiz/tariff-core"
     },
     "tariffs": "tariffs/2027.json",
-    "days": null,
-    "notes": []
+    "days": {
+      "latest": "https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d-cluster-1/latest.json",
+      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/products/dynamisch-400d-cluster-1/{year}/{date}.json"
+    },
+    "notes": [
+      "electricity-ekz-energie-dynamisch: no day prices",
+      "grid-ekz-netz-400d-cluster-1-sdl-stromreserve-solidarisierte-kost-ne7: no day prices"
+    ]
   }
 }

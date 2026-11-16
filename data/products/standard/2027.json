@@ -1,0 +1,214 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Strompreise-Schweiz/tariff-core/main/schemas/product/v1.schema.json",
+  "id": "standard",
+  "name": "EKZ Energie Erneuerbar + EKZ Netz 400ST",
+  "year": 2027,
+  "status": "suggested",
+  "default": true,
+  "note": "Electricity and grid are the tariffs EKZ marks with standardBasegroup. Metering and fees are proposed, not yet checked against the price sheet.",
+  "dsoName": "EKZ",
+  "dsoNumber": 10153012345,
+  "pricesExcludeVat": true,
+  "total": {
+    "fixed": {
+      "electricity": [{"unit": "CHF_m", "value": 3}],
+      "grid": [{"unit": "CHF_m", "value": 0}],
+      "metering": [{"unit": "CHF_m", "value": 6.2}],
+      "total": [{"unit": "CHF_m", "value": 9.2}]
+    },
+    "windows": [
+      {
+        "months": ["Jan", "Feb", "Mar", "Oct", "Nov", "Dec"],
+        "weekdays": ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
+        "from": "00:00",
+        "to": "23:59",
+        "electricity": [{"unit": "CHF_kWh", "value": 0.13}],
+        "grid": [{"unit": "CHF_kWh", "value": 0.1065}],
+        "regional_fees": [{"unit": "CHF_kWh", "value": 0.0016}],
+        "total": [{"unit": "CHF_kWh", "value": 0.2381}]
+      },
+      {
+        "months": ["Apr", "May", "Jun", "Jul", "Aug", "Sep"],
+        "weekdays": ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
+        "from": "00:00",
+        "to": "23:59",
+        "electricity": [{"unit": "CHF_kWh", "value": 0.088}],
+        "grid": [{"unit": "CHF_kWh", "value": 0.1065}],
+        "regional_fees": [{"unit": "CHF_kWh", "value": 0.0016}],
+        "total": [{"unit": "CHF_kWh", "value": 0.1961}]
+      }
+    ],
+    "dynamic": []
+  },
+  "missing": [],
+  "municipalities": [
+    {
+      "number": 12389,
+      "name": "Menzingen",
+      "tariffs": ["regional-fees-gemeinde-und-kantonalabgaben-2084c8"],
+      "fixed": [],
+      "energy": [{"unit": "CHF_kWh", "value": 0.0049}],
+      "comments": ["Gemeindeabgabe Menzingen"]
+    }
+  ],
+  "components": {
+    "electricity": {
+      "basis": "standardBasegroup",
+      "tariff": {
+        "tariffName": "EKZ Energie Erneuerbar",
+        "tariffType": "electricity",
+        "standardBasegroup": true,
+        "tariffForm": "multilevel",
+        "startDate": "2027-01-01",
+        "endDate": "2027-12-31",
+        "comment": "ohne MwSt.",
+        "customerType": "Privat- und Geschäftskunden",
+        "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_standard",
+        "prices": {
+          "base": {"price": 3, "priceUnit": "CHF/M"},
+          "energy": [
+            {
+              "months": ["Jan", "Feb", "Mar"],
+              "weekdays": ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
+              "from": "00:00",
+              "to": "23:59",
+              "price": 0.13,
+              "priceUnit": "CHF/kWh"
+            },
+            {
+              "months": ["Apr", "May", "Jun", "Jul", "Aug", "Sep"],
+              "weekdays": ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
+              "from": "00:00",
+              "to": "23:59",
+              "price": 0.088,
+              "priceUnit": "CHF/kWh"
+            },
+            {
+              "months": ["Oct", "Nov", "Dec"],
+              "weekdays": ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
+              "from": "00:00",
+              "to": "23:59",
+              "price": 0.13,
+              "priceUnit": "CHF/kWh"
+            }
+          ]
+        },
+        "id": "electricity-ekz-energie-erneuerbar"
+      }
+    },
+    "grid": {
+      "basis": "standardBasegroup",
+      "tariff": {
+        "customerVoltageLevel": 7,
+        "tariffName": "EKZ Netz 400ST + SDL, Stromreserve, Solidarisierte Kosten, Bundesabgaben",
+        "tariffType": "grid",
+        "standardBasegroup": true,
+        "tariffForm": "constant",
+        "startDate": "2027-01-01",
+        "endDate": "2027-12-31",
+        "comment": "ohne MwSt.",
+        "customerType": "Privat- und Geschäftskunden bis 100'000 kWh/a",
+        "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400ST_inclFees",
+        "prices": {
+          "base": {"price": 0, "priceUnit": "CHF/M"},
+          "energy": [
+            {
+              "weekdays": [],
+              "from": "00:00",
+              "to": "00:00",
+              "price": 0.1065,
+              "priceUnit": "CHF/kWh",
+              "months": []
+            }
+          ],
+          "refundStorage": {
+            "price": 0.1065,
+            "priceUnit": "CHF/kWh",
+            "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=refund_400ST"
+          }
+        },
+        "id": "grid-ekz-netz-400st-sdl-stromreserve-solidarisierte-kosten-bundes-ne7"
+      }
+    },
+    "metering": {
+      "basis": "suggested",
+      "tariff": {
+        "tariffName": "Messung direkt Netzebene 7",
+        "tariffType": "metering",
+        "standardBasegroup": false,
+        "tariffForm": "constant",
+        "startDate": "2027-01-01",
+        "endDate": "2027-12-31",
+        "comment": "ohne MwSt.",
+        "customerType": "Kunden mit entsprechendem Messpunkt",
+        "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=metering_directNE7",
+        "prices": {"base": {"price": 6.2, "priceUnit": "CHF/M"}},
+        "id": "metering-messung-direkt-netzebene-7"
+      },
+      "howToFind": "Depends on the connection. Direct metering is the usual case for a household.",
+      "options": [
+        {
+          "id": "metering-messung-indirekt-netzebene-7",
+          "tariffName": "Messung indirekt Netzebene 7",
+          "comment": "ohne MwSt.",
+          "fixed": [{"unit": "CHF_m", "value": 25}]
+        },
+        {
+          "id": "metering-virtueller-messpunkt",
+          "tariffName": "Virtueller Messpunkt",
+          "comment": "ohne MwSt.",
+          "fixed": [{"unit": "CHF_m", "value": 1.5}]
+        }
+      ]
+    },
+    "regional_fees": {
+      "basis": "suggested",
+      "tariff": {
+        "tariffName": "Gemeinde- und Kantonalabgaben",
+        "tariffType": "regional_fees",
+        "standardBasegroup": false,
+        "tariffForm": "constant",
+        "startDate": "2027-01-01",
+        "endDate": "2027-12-31",
+        "comment": "ohne MwSt.",
+        "customerType": "Privat- und Geschäftskunden, sofern zutreffend",
+        "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=regional_fees_lt500MWh_ZH",
+        "prices": {
+          "cantonalTaxes": [
+            {
+              "cantonName": "ZH",
+              "cantonEnergy": [
+                {
+                  "weekdays": [],
+                  "from": "00:00",
+                  "to": "00:00",
+                  "price": 0.0016,
+                  "priceUnit": "CHF/kWh",
+                  "months": []
+                }
+              ],
+              "cantonComment": "Kantonale Abgaben ZH bis 500 MWh Jahresverbrauch"
+            }
+          ]
+        },
+        "id": "regional-fees-gemeinde-und-kantonalabgaben-94a342"
+      },
+      "byMunicipality": true
+    }
+  },
+  "_meta": {
+    "schemaVersion": "2.0",
+    "vseVersion": "1.0.1",
+    "generator": {
+      "name": "tariff-core",
+      "version": "5.0.0",
+      "url": "https://github.com/Strompreise-Schweiz/tariff-core"
+    },
+    "tariffs": "tariffs/2027.json",
+    "days": null,
+    "notes": [
+      "regional fees in neither the total nor the municipalities: regional-fees-gemeinde-und-kantonalabgaben-321f8a",
+      "the total is without municipal fees: add those of your municipality from municipalities"
+    ]
+  }
+}

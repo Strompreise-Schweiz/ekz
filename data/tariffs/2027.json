@@ -7,7 +7,7 @@
     "vseVersion": "1.0.1",
     "generator": {
       "name": "tariff-core",
-      "version": "4.0.0",
+      "version": "5.0.0",
       "url": "https://github.com/Strompreise-Schweiz/tariff-core"
     },
     "year": 2027,
@@ -122,7 +122,7 @@
           "priceUnit": "CHF/M"
         },
         "dynamic": {
-          "url": "https://data.strompreise-schweiz.ch/ekz/prices/electricity-dynamic/latest.json",
+          "url": "https://data.strompreise-schweiz.ch/ekz/tariffs/current/electricity-ekz-energie-dynamisch.json",
           "sourceUrl": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_dynamic"
         }
       },
@@ -335,7 +335,7 @@
           "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=refund_400D1"
         },
         "dynamic": {
-          "url": "https://data.strompreise-schweiz.ch/ekz/prices/grid-400d-cluster-1/latest.json",
+          "url": "https://data.strompreise-schweiz.ch/ekz/tariffs/current/grid-ekz-netz-400d-cluster-1-sdl-stromreserve-solidarisierte-kost-ne7.json",
           "sourceUrl": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D1_inclFees"
         }
       },
@@ -363,7 +363,7 @@
           "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=refund_400D2"
         },
         "dynamic": {
-          "url": "https://data.strompreise-schweiz.ch/ekz/prices/grid-400d-cluster-2/latest.json",
+          "url": "https://data.strompreise-schweiz.ch/ekz/tariffs/current/grid-ekz-netz-400d-cluster-2-sdl-stromreserve-solidarisierte-kost-ne7.json",
           "sourceUrl": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D2_inclFees"
         }
       },
@@ -391,7 +391,7 @@
           "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=refund_400D3"
         },
         "dynamic": {
-          "url": "https://data.strompreise-schweiz.ch/ekz/prices/grid-400d-cluster-3/latest.json",
+          "url": "https://data.strompreise-schweiz.ch/ekz/tariffs/current/grid-ekz-netz-400d-cluster-3-sdl-stromreserve-solidarisierte-kost-ne7.json",
           "sourceUrl": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D3_inclFees"
         }
       },
@@ -419,7 +419,7 @@
           "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=refund_400D4"
         },
         "dynamic": {
-          "url": "https://data.strompreise-schweiz.ch/ekz/prices/grid-400d-cluster-4/latest.json",
+          "url": "https://data.strompreise-schweiz.ch/ekz/tariffs/current/grid-ekz-netz-400d-cluster-4-sdl-stromreserve-solidarisierte-kost-ne7.json",
           "sourceUrl": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D4_inclFees"
         }
       },
@@ -1081,6 +1081,37 @@
   ],
   "products": [
     {
+      "id": "standard",
+      "name": "EKZ Energie Erneuerbar + EKZ Netz 400ST",
+      "default": true,
+      "note": "Electricity and grid are the tariffs EKZ marks with standardBasegroup. Metering and fees are proposed, not yet checked against the price sheet.",
+      "components": {
+        "electricity": {
+          "tariff": "electricity-ekz-energie-erneuerbar",
+          "basis": "standardBasegroup"
+        },
+        "grid": {
+          "tariff": "grid-ekz-netz-400st-sdl-stromreserve-solidarisierte-kosten-bundes-ne7",
+          "basis": "standardBasegroup"
+        },
+        "metering": {
+          "tariff": "metering-messung-direkt-netzebene-7",
+          "options": [
+            "metering-messung-indirekt-netzebene-7",
+            "metering-virtueller-messpunkt"
+          ],
+          "howToFind": "Depends on the connection. Direct metering is the usual case for a household.",
+          "basis": "suggested"
+        },
+        "regional_fees": {
+          "tariff": "regional-fees-gemeinde-und-kantonalabgaben-94a342",
+          "byMunicipality": true,
+          "basis": "suggested"
+        }
+      },
+      "status": "suggested"
+    },
+    {
       "id": "dynamisch-400d-cluster-1",
       "name": "EKZ Energie Dynamisch + EKZ Netz 400D Cluster 1",
       "status": "suggested",
@@ -1091,9 +1122,18 @@
         "howToFind": "EKZ assigns the cluster per tariff year and shows it in myEKZ."
       },
       "components": {
-        "electricity": "electricity-ekz-energie-dynamisch",
-        "grid": "grid-ekz-netz-400d-cluster-1-sdl-stromreserve-solidarisierte-kost-ne7",
-        "metering": "metering-messung-direkt-netzebene-7"
+        "electricity": {
+          "tariff": "electricity-ekz-energie-dynamisch",
+          "basis": "suggested"
+        },
+        "grid": {
+          "tariff": "grid-ekz-netz-400d-cluster-1-sdl-stromreserve-solidarisierte-kost-ne7",
+          "basis": "suggested"
+        },
+        "metering": {
+          "tariff": "metering-messung-direkt-netzebene-7",
+          "basis": "suggested"
+        }
       }
     },
     {
@@ -1107,9 +1147,18 @@
         "howToFind": "EKZ assigns the cluster per tariff year and shows it in myEKZ."
       },
       "components": {
-        "electricity": "electricity-ekz-energie-dynamisch",
-        "grid": "grid-ekz-netz-400d-cluster-2-sdl-stromreserve-solidarisierte-kost-ne7",
-        "metering": "metering-messung-direkt-netzebene-7"
+        "electricity": {
+          "tariff": "electricity-ekz-energie-dynamisch",
+          "basis": "suggested"
+        },
+        "grid": {
+          "tariff": "grid-ekz-netz-400d-cluster-2-sdl-stromreserve-solidarisierte-kost-ne7",
+          "basis": "suggested"
+        },
+        "metering": {
+          "tariff": "metering-messung-direkt-netzebene-7",
+          "basis": "suggested"
+        }
       }
     },
     {
@@ -1123,9 +1172,18 @@
         "howToFind": "EKZ assigns the cluster per tariff year and shows it in myEKZ."
       },
       "components": {
-        "electricity": "electricity-ekz-energie-dynamisch",
-        "grid": "grid-ekz-netz-400d-cluster-3-sdl-stromreserve-solidarisierte-kost-ne7",
-        "metering": "metering-messung-direkt-netzebene-7"
+        "electricity": {
+          "tariff": "electricity-ekz-energie-dynamisch",
+          "basis": "suggested"
+        },
+        "grid": {
+          "tariff": "grid-ekz-netz-400d-cluster-3-sdl-stromreserve-solidarisierte-kost-ne7",
+          "basis": "suggested"
+        },
+        "metering": {
+          "tariff": "metering-messung-direkt-netzebene-7",
+          "basis": "suggested"
+        }
       }
     },
     {
@@ -1139,9 +1197,18 @@
         "howToFind": "EKZ assigns the cluster per tariff year and shows it in myEKZ."
       },
       "components": {
-        "electricity": "electricity-ekz-energie-dynamisch",
-        "grid": "grid-ekz-netz-400d-cluster-4-sdl-stromreserve-solidarisierte-kost-ne7",
-        "metering": "metering-messung-direkt-netzebene-7"
+        "electricity": {
+          "tariff": "electricity-ekz-energie-dynamisch",
+          "basis": "suggested"
+        },
+        "grid": {
+          "tariff": "grid-ekz-netz-400d-cluster-4-sdl-stromreserve-solidarisierte-kost-ne7",
+          "basis": "suggested"
+        },
+        "metering": {
+          "tariff": "metering-messung-direkt-netzebene-7",
+          "basis": "suggested"
+        }
       }
     }
   ]

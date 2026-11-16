@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
   "label": "VSE 1.0.0",
-  "message": "no source file",
-  "color": "lightgrey"
+  "message": "invalid",
+  "color": "red"
 }

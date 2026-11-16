@@ -11,13 +11,29 @@
   "checks": "https://data.strompreise-schweiz.ch/ekz/checks.json",
   "products": [
     {
+      "id": "standard",
+      "name": "EKZ Energie Erneuerbar + EKZ Netz 400ST",
+      "default": [
+        2026,
+        2027
+      ],
+      "years": {
+        "2026": "https://data.strompreise-schweiz.ch/ekz/products/standard/2026.json",
+        "2027": "https://data.strompreise-schweiz.ch/ekz/products/standard/2027.json"
+      },
+      "days": null
+    },
+    {
       "id": "dynamisch-400d",
       "name": "EKZ Energie Dynamisch + EKZ Netz 400D",
       "default": [],
       "years": {
         "2026": "https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d/2026.json"
       },
-      "days": null
+      "days": {
+        "latest": "https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d/latest.json",
+        "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/products/dynamisch-400d/{year}/{date}.json"
+      }
     },
     {
       "id": "dynamisch-400d-cluster-1",

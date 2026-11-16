@@ -15,60 +15,56 @@ Everything is listed in `https://data.strompreise-schweiz.ch/ekz/index.json`.
 
 ## Where what is
 
-| Question | Place | Changed by |
+| Folder | Holds | Changed by |
 |---|---|---|
-| Where does the data come from? | [`config/source.json`](config/source.json) | a person |
-| What does a person change? | `curation/<year>.json`, each change with a reason | a person |
-| What is wrong with it? | [`data/checks.json`](data/checks.json) | GitHub Actions |
-| What is published? | `data/`: `sources/` as the utility sent it, the rest built from it | GitHub Actions |
+| [`config/source.json`](config/source.json) | where the data comes from | a person |
+| `curation/<year>.json` | corrections and products, each with a reason | a person |
+| `data/sources/` | the files of EKZ, unchanged: `ekz-all.json` and in `days/` what the APIs sent | GitHub Actions |
+| `data/tariffs/` | all tariffs, repaired to VSE 1.0.1 and corrected, with the day prices of the dynamic tariffs | GitHub Actions |
+| `data/products/` | what a customer pays: every component and the total | GitHub Actions |
+| [`data/checks.json`](data/checks.json) | what is wrong with all of the above | GitHub Actions |
 
-## Yearly tariff file
+## What a household pays
+
+Start here. A product is what a customer pays: energy, grid, metering and fees together, excluding
+VAT. `total.fixed` holds the prices per month, `total.windows` the prices per kWh by time of day.
+
+| Product | Years | Stable URL |
+|---|---|---|
+| **Standard product**: EKZ Energie Erneuerbar + EKZ Netz 400ST | 2026, 2027 | `https://data.strompreise-schweiz.ch/ekz/products/standard/<year>.json` |
+| EKZ Energie Dynamisch + EKZ Netz 400D | 2026 | `https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d/<year>.json` |
+| EKZ Energie Dynamisch + EKZ Netz 400D Cluster 1 to 4 | 2027 | `https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d-cluster-<n>/<year>.json` |
+
+The standard product is what a household in the basic supply gets without choosing anything. All
+products are proposals (`"status": "suggested"`) until checked against the EKZ price sheet. Municipal
+fees depend on the municipality and are not included.
+
+A dynamic product also has every component per quarter hour, in the format of HDN 2025, chapter 7.4:
+`https://data.strompreise-schweiz.ch/ekz/products/<id>/latest.json` holds today and, once published,
+tomorrow.
+
+## Tariffs
 
 | What | Stable URL |
 |---|---|
-| Current year | `https://data.strompreise-schweiz.ch/ekz/tariffs/current.json` |
-| A given year | `https://data.strompreise-schweiz.ch/ekz/tariffs/<year>.json` |
+| All tariffs of the current year | `https://data.strompreise-schweiz.ch/ekz/tariffs/current.json` |
+| All tariffs of a given year | `https://data.strompreise-schweiz.ch/ekz/tariffs/<year>.json` |
+| Day prices of a dynamic tariff, today and tomorrow | `https://data.strompreise-schweiz.ch/ekz/tariffs/current/<tariff>.json` |
+| Day prices of a dynamic tariff, one day | `https://data.strompreise-schweiz.ch/ekz/tariffs/<year>/<tariff>/<date>.json` |
 
-The VSE format (OpenAPI 1.0.1) with additional fields: `tariffs[].id`, `products` (which tariffs
-belong together) and `_meta` (sources, repairs and corrections). It holds all three tariff forms:
-`constant`, `multilevel` and `dynamic`. For a dynamic tariff, `prices.dynamic.url` points to the day
-prices below. Prices exclude VAT.
-
-## Day prices
-
-One file per Swiss calendar day in the format of HDN 2025, chapter 7.4, always in quarter hours.
-`latest.json` holds today and, once published, tomorrow. These URLs never change.
-
-**Products**: every component a customer pays per quarter hour (energy, grid, metering, and
-`integrated` as the sum per kWh).
-
-| Product | Year | Stable URL |
-|---|---|---|
-| EKZ Energie Dynamisch + EKZ Netz 400D | 2026 | `https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d/latest.json` |
-| EKZ Energie Dynamisch + EKZ Netz 400D Cluster 1 | 2027 | `https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d-cluster-1/latest.json` |
-| EKZ Energie Dynamisch + EKZ Netz 400D Cluster 2 | 2027 | `https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d-cluster-2/latest.json` |
-| EKZ Energie Dynamisch + EKZ Netz 400D Cluster 3 | 2027 | `https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d-cluster-3/latest.json` |
-| EKZ Energie Dynamisch + EKZ Netz 400D Cluster 4 | 2027 | `https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d-cluster-4/latest.json` |
-
-**Price sources**: what one API of the utility sends, with the corrections of `curation/`.
-
-| Source | Valid | Stable URL |
-|---|---|---|
-| EKZ Energie Dynamisch | open | `https://data.strompreise-schweiz.ch/ekz/prices/electricity-dynamic/latest.json` |
-| EKZ Netz 400D including fees (2026) | up to 2026-12-31 | `https://data.strompreise-schweiz.ch/ekz/prices/grid-400d/latest.json` |
-| EKZ 400D integrated (2026) | up to 2026-12-31 | `https://data.strompreise-schweiz.ch/ekz/prices/integrated-400d/latest.json` |
-| EKZ Netz 400D Cluster 1 including fees | from 2027-01-01 | `https://data.strompreise-schweiz.ch/ekz/prices/grid-400d-cluster-1/latest.json` |
-| EKZ Netz 400D Cluster 2 including fees | from 2027-01-01 | `https://data.strompreise-schweiz.ch/ekz/prices/grid-400d-cluster-2/latest.json` |
-| EKZ Netz 400D Cluster 3 including fees | from 2027-01-01 | `https://data.strompreise-schweiz.ch/ekz/prices/grid-400d-cluster-3/latest.json` |
-| EKZ Netz 400D Cluster 4 including fees | from 2027-01-01 | `https://data.strompreise-schweiz.ch/ekz/prices/grid-400d-cluster-4/latest.json` |
-| EKZ standard tariff, archive up to November 2026 | open, no longer fetched | `https://data.strompreise-schweiz.ch/ekz/prices/legacy-default/<year>/<date>.json` |
+The yearly file is the VSE format (OpenAPI 1.0.1) with additional fields: `tariffs[].id`, `products`
+and `_meta` (sources, repairs and corrections). For a dynamic tariff, `prices.dynamic.url` points to
+its day prices. These are an addition to the yearly file: `tariffs/2026/<tariff>/` holds the days of
+the tariff `<tariff>` in `tariffs/2026.json`. The dynamic tariffs of EKZ are
+`electricity-ekz-energie-dynamisch`, `grid-ekz-netz-400d-…` (2026) and the four grid clusters (2027).
 
 Timestamps are Swiss local time with an offset, for example `2026-11-02T00:00:00+01:00`.
 Parse the offset and do not assume 96 intervals: a day has 92 in March and 100 in October.
-Check `_meta.complete` before you use a day.
+Check `_meta.complete` before you use a day. The site serves the days of the current year; all years
+are in git under `https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/`.
 
-A past day: `https://data.strompreise-schweiz.ch/ekz/<prices|products>/<id>/<year>/<date>.json` for the current year. All years are in git:
-`https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/<prices|products>/<id>/<year>/<date>.json`.
+EKZ also publishes `integrated_400D`, the sum of energy and grid. It is stored in `data/sources/days/`
+but not published as a tariff: the products contain the same sum as `integrated`.
 
 ## Grid clusters from 2027
 
@@ -76,12 +72,6 @@ From 2027 the grid tariff 400D has four variants. A cluster is a group of transf
 similar load pattern, not a region. EKZ assigns each customer for one tariff year and shows the
 assignment in myEKZ. EKZ publishes no list, so it cannot be derived from an address or municipality.
 Use the product of your cluster.
-
-## Older data
-
-`legacy-default` holds the archive up to November 2026. It was fetched without `tariff_name`, so it
-contains the standard tariff with one price per day and not the dynamic 400D tariff. Do not use it as
-dynamic data.
 
 Format details: [`SCHEMA.md`](https://github.com/Strompreise-Schweiz/tariff-core/blob/main/SCHEMA.md).
 
