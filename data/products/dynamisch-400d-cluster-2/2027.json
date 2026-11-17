@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Strompreise-Schweiz/tariff-core/main/schemas/product/v1.schema.json",
+  "id": "dynamisch-400d-cluster-2",
+  "name": "EKZ Energie Dynamisch + EKZ Netz 400D Cluster 2",
+  "year": 2027,
+  "status": "suggested",
+  "default": false,
+  "selection": {
+    "kind": "grid-cluster",
+    "value": "2",
+    "howToFind": "EKZ assigns the cluster per tariff year and shows it in myEKZ."
+  },
+  "note": "Proposed from the yearly file, not yet checked against the price sheet. Direct metering at network level 7. The regional fees depend on the municipality and are not included.",
+  "dsoName": "EKZ",
+  "dsoNumber": 10153012345,
+  "pricesExcludeVat": true,
+  "total": {"fixed": {"total": []}, "windows": [], "dynamic": []},
+  "missing": ["electricity", "grid", "metering", "regional_fees"],
+  "municipalities": [],
+  "components": {},
+  "_meta": {
+    "schemaVersion": "2.0",
+    "vseVersion": "1.0.1",
+    "generator": {
+      "name": "tariff-core",
+      "version": "5.0.0",
+      "url": "https://github.com/Strompreise-Schweiz/tariff-core"
+    },
+    "tariffs": "tariffs/2027.json",
+    "days": null,
+    "notes": []
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "$comment": "Stable entry point for this utility. Every path under data/ is also served under site.",
+  "$comment": "Stable entry point for this utility. Every path under data/ is also served under site. Start with products: the default product is what a household pays without choosing anything.",
   "organization": "EKZ (Elektrizitätswerke des Kantons Zürich)",
   "slug": "ekz",
   "vse_id": "CH10153012345",
@@ -9,49 +9,78 @@
   "repository": "https://github.com/Strompreise-Schweiz/ekz",
   "site": "https://data.strompreise-schweiz.ch/ekz/",
   "checks": "https://data.strompreise-schweiz.ch/ekz/checks.json",
+  "products": [
+    {
+      "id": "dynamisch-400d",
+      "name": "EKZ Energie Dynamisch + EKZ Netz 400D",
+      "default": [],
+      "years": {
+        "2026": "https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d/2026.json"
+      },
+      "days": null
+    },
+    {
+      "id": "dynamisch-400d-cluster-1",
+      "name": "EKZ Energie Dynamisch + EKZ Netz 400D Cluster 1",
+      "default": [],
+      "years": {
+        "2027": "https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d-cluster-1/2027.json"
+      },
+      "days": null
+    },
+    {
+      "id": "dynamisch-400d-cluster-2",
+      "name": "EKZ Energie Dynamisch + EKZ Netz 400D Cluster 2",
+      "default": [],
+      "years": {
+        "2027": "https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d-cluster-2/2027.json"
+      },
+      "days": null
+    },
+    {
+      "id": "dynamisch-400d-cluster-3",
+      "name": "EKZ Energie Dynamisch + EKZ Netz 400D Cluster 3",
+      "default": [],
+      "years": {
+        "2027": "https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d-cluster-3/2027.json"
+      },
+      "days": null
+    },
+    {
+      "id": "dynamisch-400d-cluster-4",
+      "name": "EKZ Energie Dynamisch + EKZ Netz 400D Cluster 4",
+      "default": [],
+      "years": {
+        "2027": "https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d-cluster-4/2027.json"
+      },
+      "days": null
+    }
+  ],
   "tariffs": {
     "current": "https://data.strompreise-schweiz.ch/ekz/tariffs/current.json",
     "years": {
       "2026": "https://data.strompreise-schweiz.ch/ekz/tariffs/2026.json",
       "2027": "https://data.strompreise-schweiz.ch/ekz/tariffs/2027.json"
-    }
-  },
-  "prices": [
-    {
-      "id": "electricity-dynamic",
-      "name": "EKZ Energie Dynamisch",
-      "latest": "https://data.strompreise-schweiz.ch/ekz/prices/electricity-dynamic/latest.json",
-      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/prices/electricity-dynamic/{year}/{date}.json",
-      "source": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_dynamic"
     },
-    {
-      "id": "grid-400d",
-      "name": "EKZ Netz 400D including fees (2026)",
-      "latest": "https://data.strompreise-schweiz.ch/ekz/prices/grid-400d/latest.json",
-      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/prices/grid-400d/{year}/{date}.json",
-      "source": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D_inclFees"
-    },
-    {
-      "id": "integrated-400d",
-      "name": "EKZ 400D integrated (2026)",
-      "latest": "https://data.strompreise-schweiz.ch/ekz/prices/integrated-400d/latest.json",
-      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/prices/integrated-400d/{year}/{date}.json",
-      "source": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=integrated_400D"
-    },
-    {
-      "id": "legacy-default",
-      "name": "EKZ standard tariff, archive up to November 2026",
-      "latest": null,
-      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/prices/legacy-default/{year}/{date}.json",
-      "source": "https://api.tariffs.ekz.ch/v1/tariffs"
-    }
-  ],
-  "products": [
-    {
-      "id": "dynamisch-400d",
-      "name": "EKZ Energie Dynamisch + EKZ Netz 400D",
-      "latest": "https://data.strompreise-schweiz.ch/ekz/products/dynamisch-400d/latest.json",
-      "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/products/dynamisch-400d/{year}/{date}.json"
-    }
-  ]
+    "days": [
+      {
+        "tariff": "electricity-ekz-energie-dynamisch",
+        "name": "EKZ Energie Dynamisch",
+        "years": [
+          2026
+        ],
+        "latest": "https://data.strompreise-schweiz.ch/ekz/tariffs/current/electricity-ekz-energie-dynamisch.json",
+        "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/tariffs/{year}/electricity-ekz-energie-dynamisch/{date}.json"
+      },
+      {
+        "tariff": "grid-ekz-netz-400d-sdl-stromreserve-solidarisierte-kosten-bundesa-ne7",
+        "name": "EKZ Netz 400D + SDL, Stromreserve, Solidarisierte Kosten, Bundesabgaben",
+        "years": [
+          2026
+        ],
+        "latest": "https://data.strompreise-schweiz.ch/ekz/tariffs/current/grid-ekz-netz-400d-sdl-stromreserve-solidarisierte-kosten-bundesa-ne7.json",
+        "archive": "https://raw.githubusercontent.com/Strompreise-Schweiz/ekz/main/data/tariffs/{year}/grid-ekz-netz-400d-sdl-stromreserve-solidarisierte-kosten-bundesa-ne7/{date}.json"
+      }
+    ]
+  }
 }
