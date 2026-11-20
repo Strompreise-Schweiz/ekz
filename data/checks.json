@@ -48,25 +48,25 @@
         "id": "electricity-dynamic",
         "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_dynamic",
         "enabled": true,
-        "days": 14,
+        "days": 15,
         "first": "2026-11-08",
-        "last": "2026-11-21"
+        "last": "2026-11-22"
       },
       {
         "id": "grid-400d",
         "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D_inclFees",
         "enabled": true,
-        "days": 13,
+        "days": 14,
         "first": "2026-11-08",
-        "last": "2026-11-20"
+        "last": "2026-11-21"
       },
       {
         "id": "integrated-400d",
         "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=integrated_400D",
         "enabled": true,
-        "days": 13,
+        "days": 14,
         "first": "2026-11-08",
-        "last": "2026-11-20"
+        "last": "2026-11-21"
       },
       {
         "id": "grid-400d-cluster-1",
@@ -233,10 +233,10 @@
         "2026/electricity-ekz-energie-dynamisch",
         "2027/electricity-ekz-energie-dynamisch"
       ],
-      "days": 14,
+      "days": 15,
       "incomplete": [
         {
-          "date": "2026-11-21",
+          "date": "2026-11-22",
           "issues": [
             "96 of 96 intervals have no price per kWh"
           ]
@@ -249,14 +249,14 @@
       "tariffs": [
         "2026/grid-ekz-netz-400d-sdl-stromreserve-solidarisierte-kosten-bundesa-ne7"
       ],
-      "days": 13,
+      "days": 14,
       "incomplete": [],
       "withoutTariff": []
     },
     {
       "id": "integrated-400d",
       "tariffs": [],
-      "days": 13,
+      "days": 14,
       "incomplete": [],
       "withoutTariff": [
         "2026-11-08",
@@ -271,7 +271,8 @@
         "2026-11-17",
         "2026-11-18",
         "2026-11-19",
-        "2026-11-20"
+        "2026-11-20",
+        "2026-11-21"
       ]
     },
     {
@@ -338,10 +339,10 @@
         "electricity",
         "grid"
       ],
-      "days": 13,
+      "days": 14,
       "incomplete": [
         {
-          "date": "2026-11-21",
+          "date": "2026-11-22",
           "issues": [
             "no day prices of grid-ekz-netz-400d-sdl-stromreserve-solidarisierte-kosten-bundesa-ne7"
           ]
