@@ -6,7 +6,7 @@
     "errors": 0,
     "warnings": 10,
     "accepted": 0,
-    "incompleteDays": 1
+    "incompleteDays": 0
   },
   "vseDefinitions": {
     "1.0.0": "https://raw.githubusercontent.com/Strompreise-Schweiz/tariff-core/main/schemas/vse/ch-electricity-tariffs-openapi-1.0.0.yaml",
@@ -56,17 +56,17 @@
         "id": "grid-400d",
         "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=grid_400D_inclFees",
         "enabled": true,
-        "days": 14,
+        "days": 15,
         "first": "2026-11-08",
-        "last": "2026-11-21"
+        "last": "2026-11-22"
       },
       {
         "id": "integrated-400d",
         "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=integrated_400D",
         "enabled": true,
-        "days": 14,
+        "days": 15,
         "first": "2026-11-08",
-        "last": "2026-11-21"
+        "last": "2026-11-22"
       },
       {
         "id": "grid-400d-cluster-1",
@@ -234,14 +234,7 @@
         "2027/electricity-ekz-energie-dynamisch"
       ],
       "days": 15,
-      "incomplete": [
-        {
-          "date": "2026-11-22",
-          "issues": [
-            "96 of 96 intervals have no price per kWh"
-          ]
-        }
-      ],
+      "incomplete": [],
       "withoutTariff": []
     },
     {
@@ -249,14 +242,14 @@
       "tariffs": [
         "2026/grid-ekz-netz-400d-sdl-stromreserve-solidarisierte-kosten-bundesa-ne7"
       ],
-      "days": 14,
+      "days": 15,
       "incomplete": [],
       "withoutTariff": []
     },
     {
       "id": "integrated-400d",
       "tariffs": [],
-      "days": 14,
+      "days": 15,
       "incomplete": [],
       "withoutTariff": [
         "2026-11-08",
@@ -272,7 +265,8 @@
         "2026-11-18",
         "2026-11-19",
         "2026-11-20",
-        "2026-11-21"
+        "2026-11-21",
+        "2026-11-22"
       ]
     },
     {
@@ -339,15 +333,8 @@
         "electricity",
         "grid"
       ],
-      "days": 14,
-      "incomplete": [
-        {
-          "date": "2026-11-22",
-          "issues": [
-            "no day prices of grid-ekz-netz-400d-sdl-stromreserve-solidarisierte-kosten-bundesa-ne7"
-          ]
-        }
-      ],
+      "days": 15,
+      "incomplete": [],
       "notes": []
     },
     {
