@@ -6,7 +6,7 @@
     "errors": 0,
     "warnings": 10,
     "accepted": 0,
-    "incompleteDays": 0
+    "incompleteDays": 1
   },
   "vseDefinitions": {
     "1.0.0": "https://raw.githubusercontent.com/Strompreise-Schweiz/tariff-core/main/schemas/vse/ch-electricity-tariffs-openapi-1.0.0.yaml",
@@ -48,9 +48,9 @@
         "id": "electricity-dynamic",
         "url": "https://api.tariffs.ekz.ch/v1/tariffs?tariff_name=electricity_dynamic",
         "enabled": true,
-        "days": 15,
+        "days": 16,
         "first": "2026-11-08",
-        "last": "2026-11-22"
+        "last": "2026-11-23"
       },
       {
         "id": "grid-400d",
@@ -233,8 +233,15 @@
         "2026/electricity-ekz-energie-dynamisch",
         "2027/electricity-ekz-energie-dynamisch"
       ],
-      "days": 15,
-      "incomplete": [],
+      "days": 16,
+      "incomplete": [
+        {
+          "date": "2026-11-23",
+          "issues": [
+            "96 of 96 intervals have no price per kWh"
+          ]
+        }
+      ],
       "withoutTariff": []
     },
     {
@@ -334,7 +341,14 @@
         "grid"
       ],
       "days": 15,
-      "incomplete": [],
+      "incomplete": [
+        {
+          "date": "2026-11-23",
+          "issues": [
+            "no day prices of grid-ekz-netz-400d-sdl-stromreserve-solidarisierte-kosten-bundesa-ne7"
+          ]
+        }
+      ],
       "notes": []
     },
     {
